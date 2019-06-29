@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomMarqueeView">
+        <attr name="text_size" format="dimension" />
+        <attr name="text_pause_time" format="integer" />
+        <attr name="text_color" format="color" />
+        <attr name="text_speed" format="integer" />
+        <attr name="text_space_count" format="integer" />
+        <attr name="text_no_scroll_center" format="boolean" />
+    </declare-styleable>
+</resources>
