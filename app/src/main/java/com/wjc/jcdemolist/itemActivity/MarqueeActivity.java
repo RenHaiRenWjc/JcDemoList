@@ -22,7 +22,7 @@ public class MarqueeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_marquee);
         ButterKnife.bind(this);
-        cuTest.setScrollText("你说什么✿✿ヽ(°▽°)ノ✿");
+        cuTest.setScrollText("aaaa,你说什么✿✿ヽ(°▽°)ノ✿");
     }
 
     @OnClick({R.id.bt_pause, R.id.bt_play, R.id.bt_update_text, R.id.bt_update_text2})
@@ -35,10 +35,10 @@ public class MarqueeActivity extends AppCompatActivity {
                 cuTest.startScroll();
                 break;
             case R.id.bt_update_text:
-                cuTest.setScrollText("哥，走了!!");
+                cuTest.setScrollText("深藏功与名!");
                 break;
             case R.id.bt_update_text2:
-                cuTest.setScrollText("事了佛衣去，深藏功与名！");
+                cuTest.setScrollText("xxx,事了佛衣去，深藏功与名！");
                 break;
         }
     }

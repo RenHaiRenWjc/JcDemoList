@@ -31,11 +31,7 @@ public class CustomMarqueeView extends AppCompatTextView {
     private int mTitleType = TYPE_IDLE;//标题类型
     private static final int TYPE_IDLE = -1;
     private static final int TYPE_NO_SCROLL = 0; //标题在控件范围内，标题不用滚动
-    private static final int TYPE_SCROLL = 1; //标题超出控件，滚动
-
-    private int mScrollType = TYPE_SCROLL_RUNNING;//滚动类型
-    private static final int TYPE_SCROLL_RUNNING = 0; //滚动中
-    private static final int TYPE_SCROLL_PAUSE = 1; //暂停滚动
+    private static final int TYPE_SCROLL_RUNNING = 1; //标题超出控件，滚动
 
     private boolean isRunning = true;
 
@@ -113,7 +109,7 @@ public class CustomMarqueeView extends AppCompatTextView {
             mTextWidth = measureTextWidth(String.valueOf(mTitleText));
             //文字滚动判断
             if (mTextWidth > mWidth) {
-                mTitleType = TYPE_SCROLL;
+                mTitleType = TYPE_SCROLL_RUNNING;
                 mTitleWithSpace = mTitleText;
                 for (int i = 0; i < mSpaceCount; i++) {
                     mTitleWithSpace += " ";
@@ -153,7 +149,7 @@ public class CustomMarqueeView extends AppCompatTextView {
                     }
                 }
                 break;
-            case TYPE_SCROLL:
+            case TYPE_SCROLL_RUNNING:
                 if (!TextUtils.isEmpty(mDrawingText)) {
                     if (isShown()) {
                         canvas.drawText(mDrawingText, mTextDefalutXShaft, mHeight / 2, mTextPaint);//从坐标0开始绘制
@@ -193,8 +189,11 @@ public class CustomMarqueeView extends AppCompatTextView {
             return;
         }
         mTitleText = text;
-        initMarqueeText();
-        if (isRunning && mTitleType != TYPE_IDLE) {
+        boolean isScroll = mTitleType == TYPE_SCROLL_RUNNING;
+        if (mTitleType != TYPE_IDLE) {
+            initMarqueeText();
+        }
+        if (isRunning && !isScroll) {
             postInvalidate();
         }
     }
