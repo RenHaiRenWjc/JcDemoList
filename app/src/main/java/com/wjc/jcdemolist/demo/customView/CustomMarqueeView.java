@@ -25,13 +25,13 @@ public class CustomMarqueeView extends AppCompatTextView {
     private String mTitleWithSpace;
     private String mDrawingText;//滚动的文字
     private int mWidth, mHeight;
-    private float mTextHeight, mTextWidth;
+    private float mTextWidth;
 
 
     private int mTitleType = TYPE_IDLE;//标题类型
     private static final int TYPE_IDLE = -1;
     private static final int TYPE_NO_SCROLL = 0; //标题在控件范围内，标题不用滚动
-    private static final int TYPE_SCROLL_RUNNING = 1; //标题超出控件，滚动
+    private static final int TYPE_SCROLL = 1; //标题超出控件，滚动
 
     private boolean isRunning = true;
 
@@ -105,11 +105,11 @@ public class CustomMarqueeView extends AppCompatTextView {
             //重置相关属性
             mWidth = getWidth();
             mHeight = getHeight() - getPaddingTop() - getPaddingBottom();
-            mTextHeight = measureTextHeight();
+//            mTextHeight = measureTextHeight();
             mTextWidth = measureTextWidth(String.valueOf(mTitleText));
             //文字滚动判断
             if (mTextWidth > mWidth) {
-                mTitleType = TYPE_SCROLL_RUNNING;
+                mTitleType = TYPE_SCROLL;
                 mTitleWithSpace = mTitleText;
                 for (int i = 0; i < mSpaceCount; i++) {
                     mTitleWithSpace += " ";
@@ -149,7 +149,7 @@ public class CustomMarqueeView extends AppCompatTextView {
                     }
                 }
                 break;
-            case TYPE_SCROLL_RUNNING:
+            case TYPE_SCROLL:
                 if (!TextUtils.isEmpty(mDrawingText)) {
                     if (isShown()) {
                         canvas.drawText(mDrawingText, mTextDefalutXShaft, mHeight / 2, mTextPaint);//从坐标0开始绘制
@@ -189,16 +189,16 @@ public class CustomMarqueeView extends AppCompatTextView {
             return;
         }
         mTitleText = text;
-        boolean isScroll = mTitleType == TYPE_SCROLL_RUNNING;
-        if (mTitleType != TYPE_IDLE) {
+        boolean isScroll = mTitleType == TYPE_SCROLL;
+        if (mTitleType != TYPE_IDLE) {//idle 状态 onSizeChanged 去初始化
             initMarqueeText();
         }
-        if (isRunning && !isScroll) {
+        if (isRunning && !isScroll) {//不是需要暂停并且没有滚动的情况下，调用
             postInvalidate();
         }
     }
 
-    //停止滚动
+    //暂停滚动
     public void stopScroll() {
         isRunning = false;
     }
