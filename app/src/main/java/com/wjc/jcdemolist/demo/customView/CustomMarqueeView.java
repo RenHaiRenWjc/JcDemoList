@@ -11,6 +11,7 @@ import android.util.AttributeSet;
 
 import com.wjc.jcdemolist.R;
 import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.ToolUtils;
 
 /**
  * ClassName:com.wjc.jcdemolist.demo.customView
@@ -110,10 +111,7 @@ public class CustomMarqueeView extends AppCompatTextView {
             //文字滚动判断
             if (mTextWidth > mWidth) {
                 mTitleType = TYPE_SCROLL;
-                mTitleWithSpace = mTitleText;
-                for (int i = 0; i < mSpaceCount; i++) {
-                    mTitleWithSpace += " ";
-                }
+                mTitleWithSpace = ToolUtils.addIndentBlank(mTitleText, mSpaceCount);
                 mDrawingText = mTitleWithSpace;
                 mTitleCharList = mDrawingText.toCharArray();
                 mMaxScroll = mTextWidth + mSpaceCount * oneSpaceWidth();

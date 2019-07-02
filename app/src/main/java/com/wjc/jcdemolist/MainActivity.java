@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import com.wjc.jcdemolist.base.BaseActivity;
 import com.wjc.jcdemolist.bean.ActivityTypeBean;
+import com.wjc.jcdemolist.demo.rxbinding_test.RxbindingActivity;
 import com.wjc.jcdemolist.itemActivity.MarqueeActivity;
 
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ public class MainActivity extends BaseActivity {
     public List<ActivityTypeBean> getList() {
         List<ActivityTypeBean> list = new ArrayList<>();
         list.add(new ActivityTypeBean("跑马灯测试", MarqueeActivity.class));
+        list.add(new ActivityTypeBean("Rxbinding 防抖", RxbindingActivity.class));
         return list;
     }
 }
