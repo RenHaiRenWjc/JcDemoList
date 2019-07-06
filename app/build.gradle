@@ -16,6 +16,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    
+    //支持 lambda
     compileOptions {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
