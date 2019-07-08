@@ -1,7 +1,5 @@
 package com.wjc.jcdemolist.demo.Dagger2Test;
 
-import com.wjc.jcdemolist.Utils.LogUtils;
-
 import javax.inject.Inject;
 
 /**
@@ -16,6 +14,7 @@ public class Car {
 
     public Car() {
       DaggerCarComponent.builder().build().inject(this);
+//      DaggerCarComponent.builder().markCarModle(new MarkCarModle()).build().inject(this);
     }
 
     public Engine getEngine() {

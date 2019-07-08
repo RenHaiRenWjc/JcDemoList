@@ -11,9 +11,14 @@ import javax.inject.Inject;
  */
 public class Engine {
     private static final String TAG = "Engine";
+    private String name;
 
     @Inject
     public Engine() {
+    }
+
+    public Engine(String name) {
+        this.name = name;
     }
 
     public void run() {
