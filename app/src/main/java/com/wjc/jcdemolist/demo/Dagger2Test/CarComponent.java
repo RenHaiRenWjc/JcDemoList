@@ -7,7 +7,7 @@ import dagger.Component;
  * Description: 注射器
  * JcChen on 2019/7/8 23:12
  */
-@Component(modules = MarkCarModle.class)
+@Component(modules = MarkCarModule.class)
 public interface CarComponent {
     void inject(Car car);
 }
