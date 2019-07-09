@@ -1,12 +1,11 @@
-package com.wjc.jcdemolist.demo.Dagger2Test;
-
-import com.wjc.jcdemolist.Utils.LogUtils;
+package com.wjc.jcdemolist.demo.Dagger2Test.test02;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 import javax.inject.Inject;
 import javax.inject.Qualifier;
+import javax.inject.Scope;
 
 /**
  * ClassName:com.wjc.jcdemolist.demo.Dagger2Test
@@ -17,14 +16,9 @@ public class Engine {
     private static final String TAG = "Engine";
     private String name;
 
-    @Qualifier
+    @Scope
     @Retention(RetentionPolicy.RUNTIME)
-    public @interface QualifierA {
-    }
-
-    @Qualifier
-    @Retention(RetentionPolicy.RUNTIME)
-    public @interface QualifierB {
+    public @interface CarScope {
     }
 
     @Inject
@@ -34,6 +28,7 @@ public class Engine {
 
     public Engine(String name) {
         this.name = name;
+        System.out.println("create---" + name);
     }
 
     public void run() {

@@ -1,4 +1,6 @@
-package com.wjc.jcdemolist.demo.Dagger2Test;
+package com.wjc.jcdemolist.demo.Dagger2Test.test01;
+
+import javax.inject.Named;
 
 import dagger.Module;
 import dagger.Provides;
@@ -21,7 +23,7 @@ public class MarkCarModule {
         return new Engine("gearA");
     }
 
-    @Engine.QualifierB
+    @Engine.QualifierB //与 @Named("enginerB") 一样
     @Provides
     Engine provideEngineB() {
         return new Engine("gearB");

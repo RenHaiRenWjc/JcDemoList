@@ -1,4 +1,6 @@
-package com.wjc.jcdemolist.demo.Dagger2Test;
+package com.wjc.jcdemolist.demo.Dagger2Test.test01;
+
+import com.wjc.jcdemolist.demo.Dagger2Test.test01.DaggerCarComponent;
 
 import javax.inject.Inject;
 
