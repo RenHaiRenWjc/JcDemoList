@@ -17,7 +17,7 @@ public class Engine {
     private static final String TAG = "Engine";
     private String name;
 
-    @Qualifier
+    @Qualifier  //@QualifierA 用来标记自定义的注解，目的是为了用自定义注解去标注提供依赖方法和被依赖变量
     @Retention(RetentionPolicy.RUNTIME)
     public @interface QualifierA {
     }
@@ -27,7 +27,7 @@ public class Engine {
     public @interface QualifierB {
     }
 
-    @Inject
+    @Inject // 标记构造函数、
     public Engine() {
     }
 
