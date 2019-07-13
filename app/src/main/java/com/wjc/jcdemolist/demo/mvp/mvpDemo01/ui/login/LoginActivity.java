@@ -14,7 +14,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class LoginActivity extends BaseActivity<LoginContract.Presenter> implements LoginContract.View {
+public class LoginActivity extends BaseActivity<LoginContract.Presenter>
+        implements LoginContract.View {
 
 
     @BindView(R.id.name)
