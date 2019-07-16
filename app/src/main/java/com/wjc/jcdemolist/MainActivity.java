@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import com.wjc.jcdemolist.base.BaseActivity;
 import com.wjc.jcdemolist.bean.ActivityTypeBean;
+import com.wjc.jcdemolist.demo.mvp.mvpDagger2Demo01.login.LoginActivity01;
 import com.wjc.jcdemolist.demo.mvp.mvpDemo01.ui.login.LoginActivity;
 import com.wjc.jcdemolist.demo.rxbinding_test.RxbindingActivity;
 import com.wjc.jcdemolist.itemActivity.MarqueeActivity;
@@ -30,6 +31,8 @@ public class MainActivity extends BaseActivity {
         list.add(new ActivityTypeBean("Rxbinding 防抖", RxbindingActivity.class));
         list.add(new ActivityTypeBean("mvpdemo01", LoginActivity.class));
         list.add(new ActivityTypeBean("mvpdemo02", com.wjc.jcdemolist.demo.mvp.mvpDemo02.login.LoginActivity.class));
+        list.add(new ActivityTypeBean("drggerdemo",
+                LoginActivity01.class));
         return list;
     }
 }

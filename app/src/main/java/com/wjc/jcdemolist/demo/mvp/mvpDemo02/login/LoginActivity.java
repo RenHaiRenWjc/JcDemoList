@@ -1,10 +1,9 @@
 package com.wjc.jcdemolist.demo.mvp.mvpDemo02.login;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.wjc.jcdemolist.R;
-import com.wjc.jcdemolist.demo.mvp.mvpDemo02.Utils;
+import com.wjc.jcdemolist.demo.mvp.mvpDemo02.Utils.Utils;
 import com.wjc.jcdemolist.demo.mvp.mvpDemo02.base.BaseActivity;
 
 public class LoginActivity extends BaseActivity<LoginContract.Presenter> {

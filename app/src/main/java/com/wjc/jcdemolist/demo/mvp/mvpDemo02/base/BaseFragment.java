@@ -44,6 +44,8 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
         }
         mUnbinder = null;
         mPresenter = null;
+        mActivity = null;
+        mRootView = null;
     }
 
     protected abstract int layoutId();

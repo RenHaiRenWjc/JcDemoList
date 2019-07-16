@@ -16,7 +16,7 @@ import io.reactivex.schedulers.Schedulers;
  * JcChen on 2019/7/13 9:08
  */
 public class LoginPresenter implements LoginContract.Presenter {
-    private static final String TAG = "LoginPresenter";
+    private static final String TAG = "LoginPresenter01";
     private LoginContract.View mView;
     private Disposable disposable;
 
