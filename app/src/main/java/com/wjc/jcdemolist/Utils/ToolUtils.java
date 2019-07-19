@@ -1,5 +1,9 @@
 package com.wjc.jcdemolist.Utils;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+
 /**
  * ClassName:com.wjc.jcdemolist.Utils
  * Description:
@@ -21,5 +25,12 @@ public class ToolUtils {
             sb.append('\t');
         }
         return "" + sb;
+    }
+
+    public static void addFragmentToActivity(FragmentManager fragmentManager,
+                                             Fragment fragment, int frameId) {
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.add(frameId, fragment);
+        transaction.commit();
     }
 }

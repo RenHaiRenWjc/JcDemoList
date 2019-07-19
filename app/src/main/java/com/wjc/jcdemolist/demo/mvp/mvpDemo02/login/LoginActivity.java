@@ -3,7 +3,7 @@ package com.wjc.jcdemolist.demo.mvp.mvpDemo02.login;
 import android.os.Bundle;
 
 import com.wjc.jcdemolist.R;
-import com.wjc.jcdemolist.demo.mvp.mvpDemo02.Utils.Utils;
+import com.wjc.jcdemolist.Utils.ToolUtils;
 import com.wjc.jcdemolist.demo.mvp.mvpDemo02.base.BaseActivity;
 
 public class LoginActivity extends BaseActivity<LoginContract.Presenter> {
@@ -20,7 +20,7 @@ public class LoginActivity extends BaseActivity<LoginContract.Presenter> {
                 .findFragmentById(R.id.fl_fragment);
         if (loginFragment == null) {
             loginFragment = LoginFragment.newInstance();
-            Utils.addFragmentToActivity(getSupportFragmentManager()
+            ToolUtils.addFragmentToActivity(getSupportFragmentManager()
                     , loginFragment, R.id.fl_fragment);
         }
         mPresenter = new LoginPresenter(loginFragment);

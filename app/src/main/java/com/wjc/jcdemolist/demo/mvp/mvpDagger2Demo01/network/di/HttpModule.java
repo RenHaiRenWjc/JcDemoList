@@ -4,7 +4,7 @@ import android.util.Log;
 
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.google.gson.Gson;
-import com.wjc.jcdemolist.demo.mvp.mvpDemo02.Utils.JsonUtil;
+import com.wjc.jcdemolist.Utils.JsonUtil;
 
 import java.util.concurrent.TimeUnit;
 

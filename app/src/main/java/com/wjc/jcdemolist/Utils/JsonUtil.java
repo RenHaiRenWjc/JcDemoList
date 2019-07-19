@@ -1,4 +1,4 @@
-package com.wjc.jcdemolist.demo.mvp.mvpDemo02.Utils;
+package com.wjc.jcdemolist.Utils;
 
 import android.text.TextUtils;
 
