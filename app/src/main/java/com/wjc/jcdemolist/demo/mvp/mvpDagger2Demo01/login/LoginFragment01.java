@@ -31,7 +31,7 @@ public class LoginFragment01 extends BaseFragment<LoginContract.Presenter> imple
     EditText pwd;
     @BindView(R.id.bt_ok)
     Button btnLogin;
-    Unbinder unbinder;
+//    Unbinder unbinder;
 
 
     protected static LoginFragment01 newInstance() {
@@ -73,7 +73,7 @@ public class LoginFragment01 extends BaseFragment<LoginContract.Presenter> imple
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
+//        unbinder.unbind();
     }
 
     @OnClick(R.id.bt_ok)

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wjc.jcdemolist">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".JcApplication"
@@ -11,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".demo.mvp.mvpDagger2Demo01.login.LoginActivity01"></activity>
+        <activity android:name=".demo.jsonDemo.JsonActivity"></activity>
+        <activity android:name=".demo.mvp.mvpDagger2Demo01.login.LoginActivity01" />
         <activity android:name=".demo.mvp.mvpDemo02.login.LoginActivity" />
         <activity
             android:name=".demo.mvp.mvpDemo01.ui.login.LoginActivity"
