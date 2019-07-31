@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wjc.jcdemolist">
-
+          package="com.wjc.jcdemolist">
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -15,21 +14,25 @@
         <activity android:name=".demo.jsonDemo.JsonActivity"></activity>
         <activity android:name=".demo.mvp.mvpDagger2Demo01.login.LoginActivity01" />
         <activity android:name=".demo.mvp.mvpDemo02.login.LoginActivity" />
+        <activity android:name=".demo.mvp.mvpDagger2Demo01.login.LoginActivity01"/>
+        <activity android:name=".demo.mvp.mvpDemo02.login.LoginActivity"/>
         <activity
             android:name=".demo.mvp.mvpDemo01.ui.login.LoginActivity"
             android:label="@string/title_activity_login"
-            android:theme="@style/NoActionBar" />
-        <activity android:name=".demo.mvp.mvpDemo01.Main2Activity" />
-        <activity android:name=".demo.rxbinding_test.RxbindingActivity" />
+            android:theme="@style/NoActionBar"/>
+        <activity android:name=".demo.mvp.mvpDemo01.Main2Activity"/>
+        <activity android:name=".demo.rxbinding_test.RxbindingActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".itemActivity.MarqueeActivity" />
-        <activity android:name=".itemActivity.ScaleTypeTestActivity" />
+        <activity android:name=".itemActivity.MarqueeActivity"/>
+        <activity android:name=".itemActivity.ScaleTypeTestActivity"/>
+        <activity android:name=".demo.viewpagerDemo.Main4Activity">
+        </activity>
     </application>
 
 </manifest>
