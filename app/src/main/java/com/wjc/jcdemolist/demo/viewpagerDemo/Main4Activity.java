@@ -57,6 +57,7 @@ public class Main4Activity extends AppCompatActivity {
                 return titles.get(position);
             }
         });
+        mVpContainer.setOffscreenPageLimit(3);
         mTlNav.setupWithViewPager(mVpContainer);
     }
 }
