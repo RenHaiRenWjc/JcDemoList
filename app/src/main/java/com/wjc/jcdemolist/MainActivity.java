@@ -4,9 +4,11 @@ import android.os.Bundle;
 
 import com.wjc.jcdemolist.base.BaseActivity;
 import com.wjc.jcdemolist.bean.ActivityTypeBean;
+import com.wjc.jcdemolist.demo.jsonDemo.JsonActivity;
 import com.wjc.jcdemolist.demo.mvp.mvpDagger2Demo01.login.LoginActivity01;
 import com.wjc.jcdemolist.demo.mvp.mvpDemo01.ui.login.LoginActivity;
 import com.wjc.jcdemolist.demo.rxbinding_test.RxbindingActivity;
+import com.wjc.jcdemolist.demo.viewpagerDemo.Main4Activity;
 import com.wjc.jcdemolist.itemActivity.MarqueeActivity;
 
 import java.util.ArrayList;
@@ -33,7 +35,6 @@ public class MainActivity extends BaseActivity {
         list.add(new ActivityTypeBean("mvpdemo02", com.wjc.jcdemolist.demo.mvp.mvpDemo02.login.LoginActivity.class));
         list.add(new ActivityTypeBean("drggerdemo", LoginActivity01.class));
         list.add(new ActivityTypeBean("viewpager+tablayout", Main4Activity.class));
-        list.add(new ActivityTypeBean("drggerdemo", LoginActivity01.class));
         list.add(new ActivityTypeBean("序列化json", JsonActivity.class));
         return list;
     }
