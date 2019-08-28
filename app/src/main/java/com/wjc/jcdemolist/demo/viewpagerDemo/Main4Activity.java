@@ -39,6 +39,8 @@ public class Main4Activity extends AppCompatActivity {
             titles.add("title:" + i);
             mFragments.add(TabLayoutFragment.newInstance("title:" + i));
         }
+//        FragmentPagerAdapter适用于Fragment比较少的情况，它会把每一个Fragment保存在内存中，不用每次切换的时候，去保存现场，切换回来在重新创建，所以用户体验比较好。
+//        而对于Fragment比较多的情况，需要切换的时候销毁以前的Fragment以释放内存，就可以使用FragmentStatePagerAdapter。
         mVpContainer.setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int i) {
