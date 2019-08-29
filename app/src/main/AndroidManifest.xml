@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wjc.jcdemolist">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:name=".JcApplication"
         android:allowBackup="true"
@@ -12,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".demo.jsonDemo.JsonActivity"></activity>
+        <activity android:name=".itemActivity.CustomActivity"></activity>
+        <activity android:name=".demo.jsonDemo.JsonActivity" />
         <activity android:name=".demo.mvp.mvpDagger2Demo01.login.LoginActivity01" />
         <activity android:name=".demo.mvp.mvpDemo02.login.LoginActivity" />
         <activity
@@ -30,7 +29,9 @@
         </activity>
         <activity android:name=".itemActivity.MarqueeActivity" />
         <activity android:name=".itemActivity.ScaleTypeTestActivity" />
-        <activity android:name=".demo.viewpagerDemo.Main4Activity"></activity>
+        <activity android:name=".demo.viewpagerDemo.Main4Activity" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

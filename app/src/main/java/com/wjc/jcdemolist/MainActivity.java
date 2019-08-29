@@ -9,6 +9,7 @@ import com.wjc.jcdemolist.demo.mvp.mvpDagger2Demo01.login.LoginActivity01;
 import com.wjc.jcdemolist.demo.mvp.mvpDemo01.ui.login.LoginActivity;
 import com.wjc.jcdemolist.demo.rxbinding_test.RxbindingActivity;
 import com.wjc.jcdemolist.demo.viewpagerDemo.Main4Activity;
+import com.wjc.jcdemolist.itemActivity.CustomActivity;
 import com.wjc.jcdemolist.itemActivity.MarqueeActivity;
 
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public class MainActivity extends BaseActivity {
         list.add(new ActivityTypeBean("drggerdemo", LoginActivity01.class));
         list.add(new ActivityTypeBean("viewpager+tablayout", Main4Activity.class));
         list.add(new ActivityTypeBean("序列化json", JsonActivity.class));
+        list.add(new ActivityTypeBean("customActivity", CustomActivity.class));
         return list;
     }
 }
