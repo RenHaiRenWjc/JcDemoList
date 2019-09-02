@@ -37,9 +37,10 @@ public class CustomViewGroup extends ViewGroup {
         int heightSpaceMode = MeasureSpec.getMode(heightMeasureSpec);
         int widthSpaceSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightSpaceSize = MeasureSpec.getSize(heightMeasureSpec);
-        for (int i = 0; i < getChildCount(); i++) {
+        for (int i = 0; i < getChildCount(); i++) {// 设置 child MeasureSpec
             View child = getChildAt(i);
             LayoutParams layoutParams = child.getLayoutParams();
+            //View 的 mPaddingLeft 直接调用不了，他们为包内可见  ,获取 childView 的 MeasureSpace
             int childWidthSpace = getChildMeasureSpec(widthMeasureSpec, 0, layoutParams.width);
             int childHeightSpace = getChildMeasureSpec(heightMeasureSpec, 0, layoutParams.height);
             child.measure(childWidthSpace, childHeightSpace);
