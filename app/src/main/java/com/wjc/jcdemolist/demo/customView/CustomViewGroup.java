@@ -33,10 +33,13 @@ public class CustomViewGroup extends ViewGroup {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 //        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+        // 1. 获取ViewGroup 自身宽高、mode
         int widthSpaceMode = MeasureSpec.getMode(widthMeasureSpec);
         int heightSpaceMode = MeasureSpec.getMode(heightMeasureSpec);
         int widthSpaceSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightSpaceSize = MeasureSpec.getSize(heightMeasureSpec);
+        // 2. 获取 child 宽高、 MeasureSpace ，then Measure childView
         for (int i = 0; i < getChildCount(); i++) {// 设置 child MeasureSpec
             View child = getChildAt(i);
             LayoutParams layoutParams = child.getLayoutParams();
@@ -48,7 +51,7 @@ public class CustomViewGroup extends ViewGroup {
 
         int width = 0;
         int height = 0;
-        // ViewGroup 根据自身的情况，计算自己尺寸
+        // 3.ViewGroup 根据自身的情况，计算自己尺寸
         switch (widthSpaceMode) {
             case MeasureSpec.EXACTLY:
                 width = widthSpaceSize;
@@ -79,7 +82,7 @@ public class CustomViewGroup extends ViewGroup {
                 break;
         }
         LogUtils.i(TAG, "onMeasure: w=" + width + ",h=" + height);
-        // 保存自身尺寸
+        // 4. 保存自身尺寸
         setMeasuredDimension(width, height);
     }
 

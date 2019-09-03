@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.wjc.jcdemolist.demo.customView.CustomFlowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".itemActivity.Custom2Activity">
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="中国男篮1队" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="300dp"
+        android:gravity="center"
+        android:text="中国男篮1---2队" />
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:background="@color/color3"
+        android:gravity="center"
+        android:text="中国男篮1---3队" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="120dp"
+        android:background="@color/color2"
+        android:gravity="center"
+        android:text="中国男篮1---04队" />
+
+    <TextView
+        android:layout_width="130dp"
+        android:layout_height="100dp"
+        android:background="@color/color1"
+        android:gravity="center"
+        android:text="中国男篮1ffff---5队" />
+
+
+</com.wjc.jcdemolist.demo.customView.CustomFlowLayout>

@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".itemActivity.CustomActivity"></activity>
+        <activity android:name=".itemActivity.Custom2Activity"></activity>
+        <activity android:name=".itemActivity.CustomActivity" />
         <activity android:name=".demo.jsonDemo.JsonActivity" />
         <activity android:name=".demo.mvp.mvpDagger2Demo01.login.LoginActivity01" />
         <activity android:name=".demo.mvp.mvpDemo02.login.LoginActivity" />
