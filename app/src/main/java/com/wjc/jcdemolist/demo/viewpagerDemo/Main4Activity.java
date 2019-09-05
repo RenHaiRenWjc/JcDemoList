@@ -1,12 +1,15 @@
 package com.wjc.jcdemolist.demo.viewpagerDemo;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.wjc.jcdemolist.R;
 import com.wjc.jcdemolist.Utils.LogUtils;
@@ -57,6 +60,23 @@ public class Main4Activity extends AppCompatActivity {
             public CharSequence getPageTitle(int position) {
                 LogUtils.i(TAG, "getPageTitle: position=" + position);
                 return titles.get(position);
+            }
+
+            @Override
+            public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
+                return super.isViewFromObject(view, object);
+            }
+
+            @NonNull
+            @Override
+            public Object instantiateItem(@NonNull ViewGroup container, int position) {
+                LogUtils.i(TAG, "instantiateItem: pos="+position);
+                return super.instantiateItem(container, position);
+            }
+
+            @Override
+            public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+                super.destroyItem(container, position, object);
             }
         });
         mVpContainer.setOffscreenPageLimit(3);
