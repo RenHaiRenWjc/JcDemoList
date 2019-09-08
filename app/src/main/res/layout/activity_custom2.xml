@@ -15,27 +15,41 @@
 
     <TextView
         android:layout_width="100dp"
-        android:layout_height="300dp"
+        android:layout_height="match_parent"
         android:gravity="center"
         android:text="中国男篮1---2队" />
 
     <TextView
         android:layout_width="350dp"
-        android:layout_height="40dp"
+        android:layout_height="79dp"
         android:background="@color/color3"
         android:gravity="center"
         android:text="中国男篮1---3队" />
 
     <TextView
         android:layout_width="200dp"
-        android:layout_height="120dp"
+        android:layout_height="220dp"
         android:background="@color/color2"
         android:gravity="center"
         android:text="中国男篮1---04队" />
 
     <TextView
         android:layout_width="130dp"
-        android:layout_height="100dp"
+        android:layout_height="400dp"
+        android:background="@color/color1"
+        android:gravity="center"
+        android:text="中国男篮1ffff---5队" />
+
+    <TextView
+        android:layout_width="130dp"
+        android:layout_height="500dp"
+        android:background="@color/color1"
+        android:gravity="center"
+        android:text="中国男篮1ffff---5队" />
+
+    <TextView
+        android:layout_width="130dp"
+        android:layout_height="200dp"
         android:background="@color/color1"
         android:gravity="center"
         android:text="中国男篮1ffff---5队" />

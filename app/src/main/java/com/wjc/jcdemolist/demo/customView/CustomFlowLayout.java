@@ -67,7 +67,10 @@ public class CustomFlowLayout extends ViewGroup {
             }
             lineViews.add(getChildAt(i));
             lineWidth += childWidth;
-            lineHeight = Math.max(lineHeight, childHeight);
+            LayoutParams params = child.getLayoutParams();
+            if (params.height != LayoutParams.MATCH_PARENT) {
+                lineHeight = Math.max(lineHeight, childHeight);
+            }
 
             if (i == getChildCount() - 1) {
                 flowLayoutHeight += lineHeight;
@@ -76,8 +79,26 @@ public class CustomFlowLayout extends ViewGroup {
                 lineHeights.add(lineHeight);
             }
         }
+        remeasureChild(widthMeasureSpec, heightMeasureSpec);
         // 3. 保存自身宽高
         setMeasuredDimension(widthMode == MeasureSpec.EXACTLY ? width : flowLayoutWidth, heightMode == MeasureSpec.EXACTLY ? height : flowLayoutHeight);
+    }
+
+    private void remeasureChild(int ws, int hs) {
+        for (int i = 0; i < views.size(); i++) {
+            int lineHeight = lineHeights.get(i);//行高
+            List<View> childList = views.get(i);
+            for (int j = 0; j < childList.size(); j++) {
+                View childView = childList.get(j);
+                LayoutParams layoutParams = childView.getLayoutParams();
+                if (layoutParams.height == LayoutParams.MATCH_PARENT) {  // match_parent 再次测量，重置高度
+                    int childWidthSpace = getChildMeasureSpec(ws, 0, layoutParams.width);
+                    int childHeightSpace = getChildMeasureSpec(hs, 0, lineHeight);
+                    childView.measure(childWidthSpace, childHeightSpace);
+                }
+            }
+
+        }
     }
 
 
