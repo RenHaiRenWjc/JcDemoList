@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import com.wjc.jcdemolist.base.BaseActivity;
 import com.wjc.jcdemolist.bean.ActivityTypeBean;
+import com.wjc.jcdemolist.demo.dispatchDemo.Main5Activity;
+import com.wjc.jcdemolist.demo.dispatchDemo02.Main6Activity;
 import com.wjc.jcdemolist.demo.jsonDemo.JsonActivity;
 import com.wjc.jcdemolist.demo.mvp.mvpDagger2Demo01.login.LoginActivity01;
 import com.wjc.jcdemolist.demo.mvp.mvpDemo01.ui.login.LoginActivity;
@@ -40,6 +42,8 @@ public class MainActivity extends BaseActivity {
         list.add(new ActivityTypeBean("序列化json", JsonActivity.class));
         list.add(new ActivityTypeBean("customActivity", CustomActivity.class));
         list.add(new ActivityTypeBean("flowlayout", Custom2Activity.class));
+        list.add(new ActivityTypeBean("事件冲突 demo", Main5Activity.class));
+        list.add(new ActivityTypeBean("事件冲突 demo02", Main6Activity.class));
         return list;
     }
 }

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".demo.dispatchDemo02.Main6Activity">
+
+    <com.wjc.jcdemolist.demo.dispatchDemo02.MyScrollView02
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@mipmap/iv_21" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@mipmap/iv_22" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@mipmap/iv_23" />
+
+            <com.wjc.jcdemolist.demo.dispatchDemo02.MyScrollView
+                android:layout_width="match_parent"
+                android:background="@color/colorAccent"
+                android:layout_height="400dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@mipmap/icon_0" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@mipmap/icon_1" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@mipmap/icon_2" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@mipmap/icon_3" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@mipmap/icon_0" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@mipmap/icon_1" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@mipmap/icon_2" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@mipmap/icon_3" />
+
+
+                </LinearLayout>
+
+            </com.wjc.jcdemolist.demo.dispatchDemo02.MyScrollView>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@mipmap/iv_22" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@mipmap/iv_23" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@mipmap/iv_22" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@mipmap/iv_21" />
+
+        </LinearLayout>
+
+    </com.wjc.jcdemolist.demo.dispatchDemo02.MyScrollView02>
+
+</LinearLayout>
