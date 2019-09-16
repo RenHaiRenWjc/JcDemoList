@@ -2,6 +2,7 @@ package com.wjc.jcdemolist.demo.customView;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -20,6 +21,10 @@ public class CustomFlowLayout extends ViewGroup {
     List<Integer> lineHeights = new ArrayList<>();
     List<List<View>> views = new ArrayList<>();
     ArrayList<View> lineViews = new ArrayList<>();
+    private boolean shouldScroll;
+
+    private float LastX, LastY;
+    private float onTouchLastY;
 
     public CustomFlowLayout(Context context) {
         super(context);
@@ -31,6 +36,89 @@ public class CustomFlowLayout extends ViewGroup {
 
     public CustomFlowLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+    }
+
+//    @Override
+//    public boolean dispatchTouchEvent(MotionEvent ev) {
+////        boolean result = super.dispatchTouchEvent(ev);
+////        LogUtils.i(TAG, "dispatchTouchEvent: result=" + result + ",ev=" + ev.getAction());
+////        return result;
+//
+//        float x = ev.getX();
+//        float y = ev.getY();
+//        boolean result = false;
+//        switch (ev.getAction()) {
+//            case MotionEvent.ACTION_UP:
+//            case MotionEvent.ACTION_DOWN:
+//                getParent().requestDisallowInterceptTouchEvent(false);
+//                result = true;
+//                break;
+//            case MotionEvent.ACTION_MOVE:
+//                float dy = y - LastY;
+//                float dx = x - LastX;
+//                if (Math.abs(dy) > Math.abs(dx)) {//滑动
+//                    getParent().requestDisallowInterceptTouchEvent(true);
+//                    result = true;
+//                } else {
+//                    getParent().requestDisallowInterceptTouchEvent(false);
+//                    result = false;
+//                }
+//                break;
+//        }
+////        result = super.onInterceptTouchEvent(ev);
+//        LogUtils.i(TAG, "onInterceptTouchEvent: y=" + y + ",lastY=" + LastY + ",ev.getAction()=" + ev.getAction());
+//        LastX = x;
+//        LastY = y;
+//        return result;
+//    }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        float x = ev.getX();
+        float y = ev.getY();
+        boolean result = false;
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_DOWN:
+//                getParent().requestDisallowInterceptTouchEvent(false);
+                result = false;
+                break;
+            case MotionEvent.ACTION_MOVE:
+                float dy = y - LastY;
+                float dx = x - LastX;
+                if (Math.abs(dy) > Math.abs(dx)) {
+//                    getParent().requestDisallowInterceptTouchEvent(true);
+                    result = true;
+                } else {
+//                    getParent().requestDisallowInterceptTouchEvent(false);
+                    result = false;
+                }
+                break;
+        }
+//        result = super.onInterceptTouchEvent(ev);
+        LogUtils.i(TAG, "onInterceptTouchEvent: y=" + y + ",lastY=" + LastY + ",ev.getAction()=" + ev.getAction());
+        LastX = x;
+        LastY = y;
+        return true;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        LogUtils.i(TAG, "onTouchEvent: event="+event.getAction());
+        if (!shouldScroll) {
+            return super.onTouchEvent(event);
+        }
+        float y = event.getY();
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_MOVE:
+                float dy = onTouchLastY - y;
+                float scrollY = getScrollY() + dy;
+                scrollBy(0, (int) (scrollY));
+                break;
+        }
+        LogUtils.i(TAG, "onTouchEvent: y=" + y + ",onTouchLastY=" + onTouchLastY + ",shouldScroll=" + shouldScroll + ",ev.getAction()=" + event.getAction());
+        onTouchLastY = y;
+        return super.onTouchEvent(event);
     }
 
     @Override
@@ -80,6 +168,7 @@ public class CustomFlowLayout extends ViewGroup {
             }
         }
         remeasureChild(widthMeasureSpec, heightMeasureSpec);
+        shouldScroll = flowLayoutHeight > height;
         // 3. 保存自身宽高
         setMeasuredDimension(widthMode == MeasureSpec.EXACTLY ? width : flowLayoutWidth, heightMode == MeasureSpec.EXACTLY ? height : flowLayoutHeight);
     }

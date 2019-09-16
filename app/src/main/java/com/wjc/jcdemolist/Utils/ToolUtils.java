@@ -1,8 +1,10 @@
 package com.wjc.jcdemolist.Utils;
 
+import android.content.res.Resources;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.TypedValue;
 
 /**
  * ClassName:com.wjc.jcdemolist.Utils
@@ -32,5 +34,9 @@ public class ToolUtils {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.add(frameId, fragment);
         transaction.commit();
+    }
+
+    public static int dp2px(int dp){
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,dp, Resources.getSystem().getDisplayMetrics());
     }
 }

@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:tag="custom2"
     tools:context=".demo.dispatchDemo02.Main6Activity">
 
     <com.wjc.jcdemolist.demo.dispatchDemo02.MyScrollView02
@@ -18,6 +19,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/iv_test01"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:src="@mipmap/iv_21" />

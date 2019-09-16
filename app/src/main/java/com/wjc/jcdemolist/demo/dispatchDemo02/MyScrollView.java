@@ -43,12 +43,11 @@ public class MyScrollView extends ScrollView {
                 int deltaX = x - mLastX;
                 int deltaY = y - mLastY;
                 LogUtils.i(TAG, "dispatchTouchEvent:action " + event.getAction());
-                LogUtils.i(TAG, "dispatchTouchEvent:  getScrollY()=" + getScrollY());
-                LogUtils.i(TAG, "dispatchTouchEvent: deltaX=" + deltaX + ",deltaY=" + deltaY);
+                LogUtils.i(TAG, "dispatchTouchEvent:  getScrollY()=" + getScrollY()+",MeasuredHeight()="+ this.getMeasuredHeight()+ ",deltaY=" + deltaY);
                 if (deltaY > 0 && getScrollY() == 0) {//顶部下滑
                     getParent().requestDisallowInterceptTouchEvent(false); //父类拦截
                     return false;
-                } else if (deltaY < 0 && getScrollY() == this.getMeasuredHeight()) { //底部上滑
+                } else if (deltaY < 0 && getScrollY() >= this.getMeasuredHeight()) { //底部上滑
                     getParent().requestDisallowInterceptTouchEvent(false); //父类拦截
                     return false;
                 }
@@ -57,8 +56,8 @@ public class MyScrollView extends ScrollView {
         mLastX = x;
         mLastY = y;
 
-        boolean result = super.dispatchTouchEvent(event);
-        LogUtils.i(TAG, "dispatchTouchEvent: result=" + result);
+//        boolean result = super.dispatchTouchEvent(event);
+//        LogUtils.i(TAG, "dispatchTouchEvent: result=" + result);
         return true;
     }
 }

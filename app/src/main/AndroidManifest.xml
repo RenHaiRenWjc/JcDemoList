@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".demo.dispatchDemo02.Main6Activity"></activity>
+        <activity android:name=".demo.dispatchDemo03.Main7Activity"></activity>
+        <activity android:name=".demo.dispatchDemo02.Main6Activity" />
         <activity android:name=".demo.dispatchDemo.Main5Activity" />
         <activity android:name=".itemActivity.Custom2Activity" />
         <activity android:name=".itemActivity.CustomActivity" />
