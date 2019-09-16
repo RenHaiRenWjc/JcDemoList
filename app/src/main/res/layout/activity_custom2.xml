@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.wjc.jcdemolist.demo.customView.FlowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.wjc.jcdemolist.demo.customView.CustomFlowLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/test01"
@@ -25,6 +26,7 @@
         android:text="中国男篮1---2队" />
 
     <TextView
+        android:id="@+id/tv_test"
         android:layout_width="350dp"
         android:layout_height="79dp"
         android:background="@color/color3"
@@ -81,4 +83,4 @@
         android:text="中国男篮1ffff---5队" />
 
 
-</com.wjc.jcdemolist.demo.customView.FlowLayout>
+</com.wjc.jcdemolist.demo.customView.CustomFlowLayout>

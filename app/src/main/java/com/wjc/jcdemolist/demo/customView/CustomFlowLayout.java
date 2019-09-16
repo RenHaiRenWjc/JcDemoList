@@ -22,9 +22,11 @@ public class CustomFlowLayout extends ViewGroup {
     List<List<View>> views = new ArrayList<>();
     ArrayList<View> lineViews = new ArrayList<>();
     private boolean shouldScroll;
+    private float mLastY = 0;
 
     private float LastX, LastY;
     private float onTouchLastY;
+    private float mLastInterceptX, mLastInterceptY;
 
     public CustomFlowLayout(Context context) {
         super(context);
@@ -74,50 +76,66 @@ public class CustomFlowLayout extends ViewGroup {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        float x = ev.getX();
-        float y = ev.getY();
-        boolean result = false;
+        LogUtils.i(TAG, "onInterceptTouchEvent: ev="+ev.getAction());
+        float xInterceptX = ev.getX();
+        float yInterceptY = ev.getY();
+        boolean intercepted = false;
         switch (ev.getAction()) {
-            case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_DOWN:
-//                getParent().requestDisallowInterceptTouchEvent(false);
-                result = false;
+                mLastInterceptX = xInterceptX;
+                mLastInterceptY = yInterceptY;
+                intercepted = false;
                 break;
             case MotionEvent.ACTION_MOVE:
-                float dy = y - LastY;
-                float dx = x - LastX;
+                float dy = yInterceptY - LastY;
+                float dx = xInterceptX - LastX;
                 if (Math.abs(dy) > Math.abs(dx)) {
-//                    getParent().requestDisallowInterceptTouchEvent(true);
-                    result = true;
+                    intercepted = true;
                 } else {
-//                    getParent().requestDisallowInterceptTouchEvent(false);
-                    result = false;
+                    intercepted = false;
                 }
+                break;
+            case MotionEvent.ACTION_UP:
+                intercepted = false;
                 break;
         }
 //        result = super.onInterceptTouchEvent(ev);
-        LogUtils.i(TAG, "onInterceptTouchEvent: y=" + y + ",lastY=" + LastY + ",ev.getAction()=" + ev.getAction());
-        LastX = x;
-        LastY = y;
-        return true;
+//        LogUtils.i(TAG, "onInterceptTouchEvent: y=" + y + ",lastY=" + LastY + ",ev.getAction()=" + ev.getAction());
+        mLastInterceptX = xInterceptX;
+        mLastInterceptY = yInterceptY;
+
+        return intercepted;
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        LogUtils.i(TAG, "onTouchEvent: event="+event.getAction());
+        LogUtils.i(TAG, "onTouchEvent: event=" + event.getAction());
         if (!shouldScroll) {
             return super.onTouchEvent(event);
         }
-        float y = event.getY();
+        float currY = event.getY();
         switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                mLastY = currY;
+                break;
             case MotionEvent.ACTION_MOVE:
-                float dy = onTouchLastY - y;
-                float scrollY = getScrollY() + dy;
-                scrollBy(0, (int) (scrollY));
+                float dy = mLastY - currY;//本次手势滑动了多大距离
+                int oldScrollY = getScrollY();//已经偏移了的距离
+                int scrollY = oldScrollY + (int)dy;//这是本次需要偏移的距离 = 之前已经偏移了的距离 + 本次手势滑动的距离
+                if(scrollY < 0){
+                    scrollY = 0;
+                }
+//                if(scrollY > realHeight - measureHeight){
+//                    scrollY = realHeight - measureHeight;
+//                }
+                scrollTo(0,scrollY);
+//                mScroller.startScroll(0, mScroller.getFinalY(), 0, (int) dy);//mCurrY = oldScrollY + dy*scale;
+//                invalidate();
+                mLastY = currY;
+                break;
+            case MotionEvent.ACTION_UP:
                 break;
         }
-        LogUtils.i(TAG, "onTouchEvent: y=" + y + ",onTouchLastY=" + onTouchLastY + ",shouldScroll=" + shouldScroll + ",ev.getAction()=" + event.getAction());
-        onTouchLastY = y;
         return super.onTouchEvent(event);
     }
 
