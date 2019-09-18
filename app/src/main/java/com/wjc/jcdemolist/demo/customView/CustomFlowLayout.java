@@ -40,40 +40,6 @@ public class CustomFlowLayout extends ViewGroup {
         super(context, attrs, defStyleAttr);
     }
 
-//    @Override
-//    public boolean dispatchTouchEvent(MotionEvent ev) {
-////        boolean result = super.dispatchTouchEvent(ev);
-////        LogUtils.i(TAG, "dispatchTouchEvent: result=" + result + ",ev=" + ev.getAction());
-////        return result;
-//
-//        float x = ev.getX();
-//        float y = ev.getY();
-//        boolean result = false;
-//        switch (ev.getAction()) {
-//            case MotionEvent.ACTION_UP:
-//            case MotionEvent.ACTION_DOWN:
-//                getParent().requestDisallowInterceptTouchEvent(false);
-//                result = true;
-//                break;
-//            case MotionEvent.ACTION_MOVE:
-//                float dy = y - LastY;
-//                float dx = x - LastX;
-//                if (Math.abs(dy) > Math.abs(dx)) {//滑动
-//                    getParent().requestDisallowInterceptTouchEvent(true);
-//                    result = true;
-//                } else {
-//                    getParent().requestDisallowInterceptTouchEvent(false);
-//                    result = false;
-//                }
-//                break;
-//        }
-////        result = super.onInterceptTouchEvent(ev);
-//        LogUtils.i(TAG, "onInterceptTouchEvent: y=" + y + ",lastY=" + LastY + ",ev.getAction()=" + ev.getAction());
-//        LastX = x;
-//        LastY = y;
-//        return result;
-//    }
-
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         LogUtils.i(TAG, "onInterceptTouchEvent: ev="+ev.getAction());
