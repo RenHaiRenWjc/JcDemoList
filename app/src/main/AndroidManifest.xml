@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".demo.dispatchDemo03.Main7Activity"></activity>
+        <activity android:name=".itemActivity.Main8Activity"></activity>
+        <activity android:name=".itemActivity.AnimatorTest" />
+        <activity android:name=".demo.dispatchDemo03.Main7Activity" />
         <activity android:name=".demo.dispatchDemo02.Main6Activity" />
         <activity android:name=".demo.dispatchDemo.Main5Activity" />
         <activity android:name=".itemActivity.Custom2Activity" />
@@ -34,6 +36,7 @@
         <activity android:name=".itemActivity.MarqueeActivity" />
         <activity android:name=".itemActivity.ScaleTypeTestActivity" />
         <activity android:name=".demo.viewpagerDemo.Main4Activity" />
+        <activity android:name=".demo.customView.XfermodeActivity" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
