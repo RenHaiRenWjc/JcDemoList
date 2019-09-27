@@ -16,6 +16,7 @@ import com.wjc.jcdemolist.itemActivity.AnimatorTest;
 import com.wjc.jcdemolist.itemActivity.Custom2Activity;
 import com.wjc.jcdemolist.itemActivity.CustomActivity;
 import com.wjc.jcdemolist.itemActivity.Main8Activity;
+import com.wjc.jcdemolist.itemActivity.Main9Activity;
 import com.wjc.jcdemolist.itemActivity.MarqueeActivity;
 
 import java.util.ArrayList;
@@ -50,6 +51,7 @@ public class MainActivity extends BaseActivity {
         list.add(new ActivityTypeBean("AnimatorTest", AnimatorTest.class));
         list.add(new ActivityTypeBean("AnimatorTest", XfermodeActivity.class));
         list.add(new ActivityTypeBean("roundView", Main8Activity.class));
+        list.add(new ActivityTypeBean("CustomDrawable", Main9Activity.class));
         return list;
     }
 }
