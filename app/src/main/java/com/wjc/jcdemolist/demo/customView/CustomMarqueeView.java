@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.support.v7.widget.AppCompatTextView;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -48,6 +49,7 @@ public class CustomMarqueeView extends AppCompatTextView {
     private float mMarqueeTextSize;
     private int mTextColor;
     private int mSpaceCount;
+    private Paint otherPaint;
 
 
     public CustomMarqueeView(Context context, AttributeSet attrs) {
@@ -86,6 +88,24 @@ public class CustomMarqueeView extends AppCompatTextView {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         drawMarqueeText(canvas);
+        mTextPaint.setColor(getResources().getColor(R.color.color1));
+        canvas.drawLine(0, getHeight() / 2, getWidth(), getHeight() / 2, mTextPaint);
+
+        otherPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+        otherPaint.setStrokeWidth(20);
+        otherPaint.setColor(getResources().getColor(R.color.colorAccent));
+    }
+
+    private void drawText(Canvas canvas, float x, float y) {
+        Rect bounds = new Rect();
+        mTextPaint.getTextBounds(mDrawingText, 0, mDrawingText.length(), bounds);// 位置有可能改变
+        float offSet = (bounds.top + bounds.bottom) / 2; // 基准线偏移量
+        canvas.drawText(mDrawingText, x, y - offSet, mTextPaint);
+
+//        Paint.FontMetrics fontMetrics = new Paint.FontMetrics();
+//        mTextPaint.getFontMetrics(fontMetrics);
+//        float offset = (fontMetrics.ascent + fontMetrics.descent) / 2;
+//        canvas.drawText(mDrawingText, x, y - offset, mTextPaint);
     }
 
     private void initPaint() {
@@ -98,6 +118,8 @@ public class CustomMarqueeView extends AppCompatTextView {
             mTextPaint.setColor(mTextColor);
             mTextPaint.setTextSize(mMarqueeTextSize);
         }
+
+        otherPaint = new Paint();
     }
 
     private void initMarqueeText() {
@@ -126,11 +148,12 @@ public class CustomMarqueeView extends AppCompatTextView {
         }
     }
 
+
     private void drawMarqueeText(Canvas canvas) {
         if (!isRunning) {
             LogUtils.i(TAG, "drawMarqueeText: pause");
             if (isShown()) {
-                canvas.drawText(mDrawingText, 0, mHeight / 2, mTextPaint);//从坐标0开始绘制
+                drawText(canvas, 0, mHeight / 2);  //从坐标0开始绘制
             }
             return;
         }
@@ -140,17 +163,20 @@ public class CustomMarqueeView extends AppCompatTextView {
                 if (mDrawingText != null && !mDrawingText.equals("")) {
                     if (mCenterNoScroll) {
                         mTextPaint.setTextAlign(Paint.Align.CENTER);
-                        canvas.drawText(mDrawingText, mWidth / 2, mHeight / 2, mTextPaint);
+//                        canvas.drawText(mDrawingText, mWidth / 2, mHeight / 2, mTextPaint);
+                        drawText(canvas, mWidth / 2, mHeight / 2);
                     } else {
                         mTextPaint.setTextAlign(Paint.Align.LEFT);
-                        canvas.drawText(mDrawingText, 0, mHeight / 2, mTextPaint);
+//                        canvas.drawText(mDrawingText, 0, mHeight / 2, mTextPaint);
+                        drawText(canvas, 0, mHeight / 2);
                     }
                 }
                 break;
             case TYPE_SCROLL:
                 if (!TextUtils.isEmpty(mDrawingText)) {
                     if (isShown()) {
-                        canvas.drawText(mDrawingText, mTextDefalutXShaft, mHeight / 2, mTextPaint);//从坐标0开始绘制
+//                        canvas.drawText(mDrawingText, mTextDefalutXShaft, mHeight / 2, mTextPaint);//从坐标0开始绘制
+                        drawText(canvas, mTextDefalutXShaft, mHeight / 2);
                         mTextDefalutXShaft = mTextDefalutXShaft - mSpeed;
                     }
                     if (mMaxScroll < Math.abs(mTextDefalutXShaft)) {//当达到条件后，暂停一下,然后从0开始绘制
