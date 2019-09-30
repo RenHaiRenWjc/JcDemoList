@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wjc.jcdemolist.demo.customView;
+package com.wjc.jcdemolist.itemActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.wjc.jcdemolist.base.BaseActivity;
 import com.wjc.jcdemolist.bean.ActivityTypeBean;
-import com.wjc.jcdemolist.demo.customView.XfermodeActivity;
+import com.wjc.jcdemolist.itemActivity.XfermodeActivity;
 import com.wjc.jcdemolist.demo.dispatchDemo.Main5Activity;
 import com.wjc.jcdemolist.demo.dispatchDemo02.Main6Activity;
 import com.wjc.jcdemolist.demo.jsonDemo.JsonActivity;

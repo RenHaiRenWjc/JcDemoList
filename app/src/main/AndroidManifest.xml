@@ -37,7 +37,7 @@
         <activity android:name=".itemActivity.MarqueeActivity" />
         <activity android:name=".itemActivity.ScaleTypeTestActivity" />
         <activity android:name=".demo.viewpagerDemo.Main4Activity" />
-        <activity android:name=".demo.customView.XfermodeActivity" />
+        <activity android:name=".itemActivity.XfermodeActivity" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

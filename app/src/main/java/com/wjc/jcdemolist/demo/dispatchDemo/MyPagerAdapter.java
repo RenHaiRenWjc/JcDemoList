@@ -38,8 +38,8 @@ public class MyPagerAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, int position) {
         View view = View.inflate(mContext, R.layout.item_list, null);
         ListView list = view.findViewById(R.id.list);
-        TextView textView = view.findViewById(R.id.tv_page);
-        textView.setText("page--" + position);
+//        TextView textView = view.findViewById(R.id.tv_page);
+//        textView.setText("page--" + position);
         list.setAdapter(new SimpleAdapter(container.getContext(), mData, R.layout.item_base02, new String[]{"key"}, new int[]{R.id.iv}));
         container.addView(view);
         return view;

@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.TypedValue;
+import android.view.MotionEvent;
 
 /**
  * ClassName:com.wjc.jcdemolist.Utils
@@ -36,7 +37,26 @@ public class ToolUtils {
         transaction.commit();
     }
 
-    public static int dp2px(int dp){
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,dp, Resources.getSystem().getDisplayMetrics());
+    public static int dp2px(int dp) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, Resources.getSystem().getDisplayMetrics());
+    }
+
+    public static String fetchEventAction(int action) {
+        String result = "";
+        switch (action) {
+            case MotionEvent.ACTION_DOWN:
+                result = "ACTION_DOWN";
+                break;
+            case MotionEvent.ACTION_UP:
+                result = "ACTION_UP";
+                break;
+            case MotionEvent.ACTION_MOVE:
+                result = "ACTION_MOVE";
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                result = "ACTION_CANCEL";
+                break;
+        }
+        return result;
     }
 }
