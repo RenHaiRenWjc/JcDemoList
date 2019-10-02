@@ -2,6 +2,7 @@ package com.wjc.jcdemolist.demo.customView;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -144,7 +145,7 @@ public class CustomClearDrawable extends Drawable {
         mLinePaint.setPathEffect(new DashPathEffect(new float[]{20f, 10f}, 0));
         canvas.drawLine(0, mCenterY, mWidth, mCenterY, mLinePaint);
         canvas.drawLine(mCenterX, 0, mCenterX, mHeight, mLinePaint);
-
+        LogUtils.i(TAG, "draw: mAnimState=" + mAnimState);
         switch (mAnimState) {
             case state_origin:
                 drawCross(canvas, mPaint);
@@ -246,11 +247,13 @@ public class CustomClearDrawable extends Drawable {
     }
 
     private ValueAnimator createAnimator(int drawType, long duration, TimeInterpolator interpolator) {
+//        LogUtils.i(TAG, "createAnimator: drawType=" + drawType + ",duration=" + duration);
         ValueAnimator animator = ValueAnimator.ofFloat(0.0f, 1.0f);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float value = (Float) animation.getAnimatedValue();
+                LogUtils.i(TAG, "onAnimationUpdate: value = " + value + ",mAnimState=" + mAnimState+",drawType="+drawType);
                 mAnimState = drawType;
                 mPointPosScale = value;
                 invalidateSelf();
@@ -258,6 +261,7 @@ public class CustomClearDrawable extends Drawable {
         });
         animator.setDuration(duration);
         animator.setInterpolator(interpolator);
+//        LogUtils.i(TAG, "createAnimator: end");
         return animator;
     }
 
@@ -283,6 +287,7 @@ public class CustomClearDrawable extends Drawable {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float value = (Float) animation.getAnimatedValue();
+                LogUtils.d(TAG, "onAnimationUpdate: value = " + value + ",mAnimState=" + mAnimState+",drawType="+state_rotate);
                 mAnimState = state_rotate;
                 mCrossScale = value;
                 invalidateSelf();
@@ -294,9 +299,9 @@ public class CustomClearDrawable extends Drawable {
         AnimatorSet beginAnimSet = new AnimatorSet();
         beginAnimSet.playTogether(circleAnim, crossAnim);
 
-        ValueAnimator pointUpAnim = createAnimator(state_up, DURATION_POINT_UP, fast_out_slow_in);
-        ValueAnimator pointDownAnim = createAnimator(state_down, DURATION_POINT_DOWN, fast_out_slow_in);
-        ValueAnimator finishAnim = createAnimator(state_finish, DURATION_FINISH, fast_out_slow_in);
+        ValueAnimator pointUpAnim = createAnimator(state_up, DURATION_POINT_UP, fast_out_slow_in);// 2
+        ValueAnimator pointDownAnim = createAnimator(state_down, DURATION_POINT_DOWN, fast_out_slow_in); //3
+        ValueAnimator finishAnim = createAnimator(state_finish, DURATION_FINISH, fast_out_slow_in);// 4
         ValueAnimator delayAnim = ValueAnimator.ofFloat(0, 0);
         delayAnim.addListener(new Animator.AnimatorListener() {
             @Override
@@ -306,8 +311,8 @@ public class CustomClearDrawable extends Drawable {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-//                mAnimState = state_origin;
-//                invalidateSelf();
+                mAnimState = state_origin;
+                invalidateSelf();
             }
 
             @Override
@@ -322,7 +327,16 @@ public class CustomClearDrawable extends Drawable {
         });
         delayAnim.setDuration(DURATION_ORIGIN_DELAY);
         mAnimatorSet = new AnimatorSet();
+
+//        mAnimatorSet.play(beginAnimSet)
+//                .before(pointUpAnim)   // play 后，before的动画同时开始
+//                .before(pointDownAnim);
+//                .before(finishAnim);
+//                .before(delayAnim);
+
         mAnimatorSet.playSequentially(beginAnimSet, pointUpAnim, pointDownAnim, finishAnim, delayAnim);
+
+
         mAnimatorSet.start();
     }
 
@@ -333,6 +347,7 @@ public class CustomClearDrawable extends Drawable {
         }
         mAnimState = state_origin;
         invalidateSelf();
+
     }
 
 
