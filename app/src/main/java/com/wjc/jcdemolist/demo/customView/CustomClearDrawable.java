@@ -141,9 +141,12 @@ public class CustomClearDrawable extends Drawable {
         mLinePaint.setColor(Color.BLACK);
         mLinePaint.setStyle(Paint.Style.STROKE);
         mLinePaint.setStrokeWidth(4);
-        mLinePaint.setStrokeCap(Paint.Cap.ROUND);
-        mLinePaint.setPathEffect(new DashPathEffect(new float[]{20f, 10f}, 0));
-        canvas.drawLine(0, mCenterY, mWidth, mCenterY, mLinePaint);
+        mLinePaint.setPathEffect(new DashPathEffect(new float[]{10f, 5f}, 0));
+        Path path = new Path();
+        path.moveTo(0,mCenterY);
+        path.lineTo(mWidth,mCenterY);
+        canvas.drawPath(path,mLinePaint);
+//        canvas.drawLine(0, mCenterY, mWidth, mCenterY, mLinePaint);
         canvas.drawLine(mCenterX, 0, mCenterX, mHeight, mLinePaint);
         LogUtils.i(TAG, "draw: mAnimState=" + mAnimState);
         switch (mAnimState) {

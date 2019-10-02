@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.wjc.jcdemolist.R;
+import com.wjc.jcdemolist.demo.customView.DrawGestureView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +20,12 @@ public class PaintAndCanvasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paint_canvas);
 
-        ViewPager mViewPager =findViewById(R.id.main_viewpager);
+        ViewPager mViewPager = findViewById(R.id.main_viewpager);
 
         RoundViewFragment roundViewFragment = new RoundViewFragment();
         CustomDrawableFragment customDrawableFragment = new CustomDrawableFragment();
+        DrawGestureFragment drawGestureFragment = new DrawGestureFragment();
+        fragments.add(drawGestureFragment);
         fragments.add(roundViewFragment);
         fragments.add(customDrawableFragment);
 
