@@ -8,4 +8,8 @@
         <attr name="text_space_count" format="integer" />
         <attr name="text_no_scroll_center" format="boolean" />
     </declare-styleable>
+
+    <declare-styleable name="Skinable">
+        <attr name="isSupport" format="boolean" />
+    </declare-styleable>
 </resources>

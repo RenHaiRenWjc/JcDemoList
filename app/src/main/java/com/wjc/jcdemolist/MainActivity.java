@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import com.wjc.jcdemolist.base.BaseActivity;
 import com.wjc.jcdemolist.bean.ActivityTypeBean;
+import com.wjc.jcdemolist.demo.changeSkin.ChangeSkinActivity;
 import com.wjc.jcdemolist.itemActivity.XfermodeActivity;
 import com.wjc.jcdemolist.demo.dispatchDemo.Main5Activity;
 import com.wjc.jcdemolist.demo.dispatchDemo02.Main6Activity;
@@ -50,6 +51,7 @@ public class MainActivity extends BaseActivity {
         list.add(new ActivityTypeBean("AnimatorTest", AnimatorTest.class));
         list.add(new ActivityTypeBean("AnimatorTest", XfermodeActivity.class));
         list.add(new ActivityTypeBean("绘制paint和canvas", PaintAndCanvasActivity.class));
+        list.add(new ActivityTypeBean(" 换肤", ChangeSkinActivity.class));
         return list;
     }
 }

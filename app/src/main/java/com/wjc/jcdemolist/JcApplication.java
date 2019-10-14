@@ -3,6 +3,7 @@ package com.wjc.jcdemolist;
 import android.app.Application;
 
 import com.facebook.stetho.Stetho;
+import com.wjc.jcdemolist.demo.changeSkin.SkinEngine;
 import com.wjc.jcdemolist.demo.mvp.mvpDagger2Demo01.di.AppComponent;
 import com.wjc.jcdemolist.demo.mvp.mvpDagger2Demo01.di.AppModule;
 import com.wjc.jcdemolist.demo.mvp.mvpDagger2Demo01.di.DaggerAppComponent;
@@ -26,6 +27,7 @@ public class JcApplication extends Application {
         appComponent = DaggerAppComponent.builder()
                 .appModule(new AppModule(this))
                 .build();
+        SkinEngine.getInstance().init(this);
     }
 
     public AppComponent getAppComponent() {

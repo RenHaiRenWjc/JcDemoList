@@ -21,7 +21,7 @@ import java.util.List;
  * Description:
  * JcChen on 2019/6/16 10:16
  */
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class  BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
