@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:background="@color/color4"
     android:layout_height="match_parent">
 
     <com.wjc.jcdemolist.demo.customView.CustomRoundView
@@ -9,6 +10,7 @@
         android:layout_height="200dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="100dp"
+        android:id="@+id/cv_test"
 
         />
 
