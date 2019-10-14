@@ -13,11 +13,12 @@ import android.view.View;
 import android.widget.Button;
 
 import com.wjc.jcdemolist.R;
+import com.wjc.jcdemolist.Utils.LogUtils;
 
 import java.io.File;
 
 public class ChangeSkinActivity extends AppCompatActivity {
-
+    private static final String TAG = "ChangeSkinActivity";
     private SkinFactory mSkinFactory;
 
     @Override
@@ -49,11 +50,12 @@ public class ChangeSkinActivity extends AppCompatActivity {
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                File skinFile = new File(Environment.getExternalStorageDirectory(), "app-debug.apk");
-                SkinEngine.getInstance().load(skinFile.getAbsolutePath());
+//                File skinFile = new File(Environment.getExternalStorageDirectory(), "app-debug.apk");
+//                SkinEngine.getInstance().load(skinFile.getAbsolutePath());
                 mSkinFactory.changeSkin();
             }
         });
+
 
     }
 }

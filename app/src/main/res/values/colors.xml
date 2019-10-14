@@ -8,5 +8,5 @@
     <color name="color3">#5F8F2F</color>
     <color name="color4">#5E1B6286</color>
     <color name="color5">#80160C</color>
-    <color name="color4_day">@color/colorPrimary</color>
+    <color name="color5_day">@color/colorPrimary</color>
 </resources>

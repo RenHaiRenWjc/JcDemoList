@@ -115,17 +115,13 @@ public class SkinFactory implements LayoutInflater.Factory2 {
                 if (TextUtils.equals(attrType, "drawable")) {
                     view.setBackground(ContextCompat.getDrawable(context, R.drawable.ic_launcher_background));
                 } else if (TextUtils.equals(attrType, "color")) {
-                    view.setBackgroundColor(context.getResources().getColor(R.color.color4_day));
+                    view.setBackgroundColor(context.getResources().getColor(R.color.color5_day));
                 }
             }
             if (view instanceof TextView) {
                 String color = attrMap.get("textColor");
                 if (!TextUtils.isEmpty(color)) {
-
-                    LogUtils.i(TAG, "changeSkin: textColor=" + color);
                     int textColorId = Integer.parseInt(color.substring(1)); // substring 提取字符串中介于两个指定下标之间的字符
-                    // 通过app内部 resId 拿到这个id对应的名字
-
                     ((TextView) view).setTextColor(SkinEngine.getInstance().getColor(textColorId));
                     ((TextView) view).setText("testsssssssssssssss");
                 }
