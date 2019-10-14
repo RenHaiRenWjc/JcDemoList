@@ -1,15 +1,14 @@
-package com.wjc.jcdemolist.demo.dispatchDemo02;
+package com.wjc.jcdemolist.demo.dispatch.dispatchDemo02;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.ScrollView;
 
 import com.wjc.jcdemolist.Utils.LogUtils;
 
 /**
- * ClassName:com.wjc.jcdemolist.demo.dispatchDemo02
+ * ClassName:com.wjc.jcdemolist.demo.dispatch.dispatchDemo02
  * Description:
  * JcChen on 2019/9/11 8:36
  */

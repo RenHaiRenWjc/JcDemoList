@@ -10,6 +10,9 @@ import android.widget.ImageView;
 import com.wjc.jcdemolist.R;
 import com.wjc.jcdemolist.demo.customView.CustomClearDrawable;
 
+/**
+ * 自定义 clearDrawable
+ */
 
 public class CustomDrawableFragment extends Fragment {
 

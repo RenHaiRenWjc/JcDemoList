@@ -5,9 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".demo.dispatchDemo.Main5Activity">
+    tools:context=".demo.dispatch.dispatchDemo.Main5Activity">
 
-    <com.wjc.jcdemolist.demo.dispatchDemo.BadViewPager
+    <com.wjc.jcdemolist.demo.dispatch.dispatchDemo.BadViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

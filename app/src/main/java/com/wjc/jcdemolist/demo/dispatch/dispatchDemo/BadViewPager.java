@@ -1,4 +1,4 @@
-package com.wjc.jcdemolist.demo.dispatchDemo;
+package com.wjc.jcdemolist.demo.dispatch.dispatchDemo;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 /**
- * ClassName:com.wjc.jcdemolist.demo.dispatchDemo
+ * ClassName:com.wjc.jcdemolist.demo.dispatch.dispatchDemo
  * Description:
  * JcChen on 2019/9/9 23:07
  */

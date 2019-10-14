@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".demo.dispatchDemo03.Main7Activity">
+    tools:context=".demo.dispatch.dispatchDemo03.Main7Activity">
 
 
 </ScrollView>

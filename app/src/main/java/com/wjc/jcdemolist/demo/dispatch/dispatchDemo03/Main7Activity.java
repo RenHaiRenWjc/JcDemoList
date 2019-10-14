@@ -1,4 +1,4 @@
-package com.wjc.jcdemolist.demo.dispatchDemo03;
+package com.wjc.jcdemolist.demo.dispatch.dispatchDemo03;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

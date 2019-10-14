@@ -12,7 +12,7 @@ import com.wjc.jcdemolist.R;
 
 /**
  * ClassName:com.wjc.jcdemolist.demo.PaintAndCanvas
- * Description:
+ * Description: 圆形图片
  * JcChen on 2019/10/2 9:28
  */
 public class RoundViewFragment extends Fragment {

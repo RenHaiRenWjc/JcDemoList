@@ -1,13 +1,11 @@
-package com.wjc.jcdemolist.demo.dispatchDemo;
+package com.wjc.jcdemolist.demo.dispatch.dispatchDemo;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 
 import com.wjc.jcdemolist.R;
 
@@ -15,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * ClassName:com.wjc.jcdemolist.demo.dispatchDemo
+ * ClassName:com.wjc.jcdemolist.demo.dispatch.dispatchDemo
  * Description:
  * JcChen on 2019/9/9 23:10
  */
