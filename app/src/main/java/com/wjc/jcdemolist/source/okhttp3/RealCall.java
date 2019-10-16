@@ -71,7 +71,7 @@ final class RealCall implements Call {
     }
 
     @Override
-    public Response execute() throws IOException {
+        public Response execute() throws IOException {  // 同步
         synchronized (this) {
             if (executed) throw new IllegalStateException("Already Executed");
             executed = true;
@@ -97,7 +97,7 @@ final class RealCall implements Call {
     }
 
     @Override
-    public void enqueue(Callback responseCallback) {
+    public void enqueue(Callback responseCallback) { // 异步
         synchronized (this) {
             if (executed) throw new IllegalStateException("Already Executed");
             executed = true;
@@ -174,7 +174,7 @@ final class RealCall implements Call {
                     responseCallback.onFailure(RealCall.this, e);
                 }
             } finally {
-                client.dispatcher().finished(this);
+                client.dispatcher().finished(this);  //任务完成，回到finished
             }
         }
     }

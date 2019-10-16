@@ -73,8 +73,13 @@ public final class Dispatcher {
 
     }
 
+
+//    ArrayBlockingQueue arrayBlockingQueue;
+//    LinkedBlockingQueue linkedBlockingQueue;
+//    SynchronousQueue synchronousQueue; 无等待、最大并发
+
     public synchronized ExecutorService executorService() {
-        if (executorService == null) {
+        if (executorService == null) { // 0 :不会缓存线程；当发现核心Thread 为0时，马上添加进入队列中，队列拒绝，马上建立一般线程
             executorService = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60, TimeUnit.SECONDS,
                     new SynchronousQueue<Runnable>(), Util.threadFactory("OkHttp Dispatcher",
                     false));
@@ -144,6 +149,7 @@ public final class Dispatcher {
     }
 
     synchronized void enqueue(AsyncCall call) {
+        // 1. 最大请求、并发数 maxRequests 2. 同一域名正在请求的数据
         if (runningAsyncCalls.size() < maxRequests && runningCallsForHost(call) < maxRequestsPerHost) {
             runningAsyncCalls.add(call);
             executorService().execute(call);
@@ -170,13 +176,13 @@ public final class Dispatcher {
         }
     }
 
-    private void promoteCalls() {
+    private void promoteCalls() { // ready 请求add 入 running 中
         if (runningAsyncCalls.size() >= maxRequests) return; // Already running max capacity.
         if (readyAsyncCalls.isEmpty()) return; // No ready calls to promote.
 
         for (Iterator<AsyncCall> i = readyAsyncCalls.iterator(); i.hasNext(); ) {
             AsyncCall call = i.next();
-
+            //  拿到的等待请求的 host，是否存在最大
             if (runningCallsForHost(call) < maxRequestsPerHost) {
                 i.remove();
                 runningAsyncCalls.add(call);
@@ -224,7 +230,7 @@ public final class Dispatcher {
         int runningCallsCount;
         Runnable idleCallback;
         synchronized (this) {
-            if (!calls.remove(call)) throw new AssertionError("Call wasn't in-flight!");
+            if (!calls.remove(call)) throw new AssertionError("Call wasn't in-flight!");  // 请求队列移除
             if (promoteCalls) promoteCalls();
             runningCallsCount = runningCallsCount();
             idleCallback = this.idleCallback;
