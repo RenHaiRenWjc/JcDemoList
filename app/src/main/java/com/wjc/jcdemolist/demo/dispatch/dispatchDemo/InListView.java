@@ -9,12 +9,12 @@ import android.widget.ListView;
  * Description:
  * JcChen on 2019/9/9 23:11
  */
-public class MyListView extends ListView {
-    public MyListView(Context context) {
+public class InListView extends ListView {
+    public InListView(Context context) {
         super(context);
     }
 
-    public MyListView(Context context, AttributeSet attributeSet) {
+    public InListView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
     }
 

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".demo.dispatch.dispatchDemo.Main5Activity">
 
-    <com.wjc.jcdemolist.demo.dispatch.dispatchDemo.BadViewPager
+    <com.wjc.jcdemolist.demo.dispatch.dispatchDemo.OutViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

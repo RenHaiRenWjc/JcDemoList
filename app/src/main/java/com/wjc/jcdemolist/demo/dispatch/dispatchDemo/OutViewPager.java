@@ -11,14 +11,14 @@ import android.view.MotionEvent;
  * Description:
  * JcChen on 2019/9/9 23:07
  */
-public class BadViewPager extends ViewPager {
+public class OutViewPager extends ViewPager {
     private int mLastX, mLastY;
 
-    public BadViewPager(@NonNull Context context) {
+    public OutViewPager(@NonNull Context context) {
         super(context);
     }
 
-    public BadViewPager(@NonNull Context context, AttributeSet attributeSet) {
+    public OutViewPager(@NonNull Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
     }
 

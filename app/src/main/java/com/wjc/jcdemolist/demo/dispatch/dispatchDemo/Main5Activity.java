@@ -20,7 +20,7 @@ public class Main5Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
 
-        BadViewPager pager = findViewById(R.id.viewpager);
+        OutViewPager pager = findViewById(R.id.viewpager);
         List<Map<String, Integer>> strings = new ArrayList<>();
 
         Map<String, Integer> map;
