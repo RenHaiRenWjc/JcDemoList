@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".demo.keepAlive.KeepAliveActivity"></activity>
+        <activity android:name=".demo.ServiceDemo.ServiceDemoActivity"></activity>
         <activity android:name=".demo.changeSkin.ChangeSkinActivity" />
         <activity android:name=".demo.PaintAndCanvas.PaintAndCanvasActivity" />
         <activity android:name=".itemActivity.AnimatorTest" />
@@ -39,7 +39,11 @@
         <activity android:name=".itemActivity.ScaleTypeTestActivity" />
         <activity android:name=".demo.viewpagerDemo.Main4Activity" />
         <activity android:name=".itemActivity.XfermodeActivity" />
+
+        <service android:name=".demo.ServiceDemo.ForegroundService"/>
+
     </application>
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />

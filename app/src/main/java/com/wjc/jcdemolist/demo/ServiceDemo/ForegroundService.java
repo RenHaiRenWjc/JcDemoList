@@ -1,4 +1,4 @@
-package com.wjc.jcdemolist.demo.keepAlive;
+package com.wjc.jcdemolist.demo.ServiceDemo;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -12,8 +12,6 @@ import android.support.v4.app.NotificationCompat;
 import androidx.annotation.Nullable;
 
 import com.wjc.jcdemolist.Utils.LogUtils;
-
-import java.nio.channels.Channel;
 
 /**
  * ClassName:com.wjc.jcdemolist.demo.keepAlive
