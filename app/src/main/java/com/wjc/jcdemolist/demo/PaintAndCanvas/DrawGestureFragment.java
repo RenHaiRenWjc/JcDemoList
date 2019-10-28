@@ -30,4 +30,9 @@ public class DrawGestureFragment extends BaseFragment {
             }
         });
     }
+
+    @Override
+    public void doTask() {
+
+    }
 }
