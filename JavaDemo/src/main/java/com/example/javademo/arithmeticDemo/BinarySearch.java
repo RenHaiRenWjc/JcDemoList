@@ -10,10 +10,37 @@ public class BinarySearch {
 
     public static void main(String[] args) {
 //        System.out.println("binarySearch --:" + binarySearch(31));
-        System.out.println("addTwoNumbers --:" + addTwoNumbers(null, null));
+//        System.out.println("addTwoNumbers --:" + addTwoNumbers(null, null));
+        System.out.println("result=" + lengthOfLongestSubstring("aabaab!bb"));
+
+    }
+
+    public static int lengthOfLongestSubstring(String s) {
+//        char[] s1 = s.toCharArray();
+        String result = "";
+        result.length();
+        int count = 0;
+        int temp = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char item = s.charAt(i);
+//            System.out.println("i=" + item);
+            if (result.contains(item + "")) {
+                int index = result.indexOf(item);
+                temp = count > temp ? count : temp;
+                result = result.substring(index + 1) + item;
+                count = result.length();
+//                System.out.println("result=" + result + ",count=" + count + ",index=" + index);
+            } else {
+                result = result + item;
+                count++;
+//                System.out.println("---result=" + result + ",count=" + count);
+            }
+        }
+        return count > temp ? count : temp;
     }
 
     /**
+     * 非递归
      * 必须是有序数据
      * 二分查找，查找值所在的位置
      */
@@ -30,7 +57,21 @@ public class BinarySearch {
                 high = mid - 1;
             }
         }
+
         return -1;
+    }
+
+    private static int binarySearch(int start, int end, int target) {
+        if (start > end) {
+            return -1;
+        }
+        int mid = (start + end) / 2;
+        if (orderList[mid] < target) {
+            binarySearch(mid - 1, end, target);
+        } else if (orderList[mid] > target) {
+            binarySearch(start, mid + 1, target);
+        }
+        return mid;
     }
 
     // https://leetcode-cn.com/problems/add-two-numbers/comments/
