@@ -1,72 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.wjc.jcdemolist.itemActivity.ScaleTypeTestActivity">
 
-    <!-- centerCrop 目的：按比例拉伸或压缩图片，使图片长（宽）等于或大于View长（宽） -->
+    <!-- centerCrop 目的：居中，按比例拉伸或压缩图片，使之完全充满view，超出的剪裁 -->
     <Button
         android:id="@+id/bt"
-        android:text="centerCrop"
-        android:textSize="8sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
+        android:text="centerCrop"
+        android:textSize="8sp" />
 
-    <ImageView
-        android:id="@+id/iv01"
-        android:scaleType="centerCrop"
-        android:src="@mipmap/shali"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        app:layout_constraintTop_toBottomOf="@+id/bt"/>
-
-
-    <!--centerInside 目的： 按比例拉伸或压缩图片，使图片长（宽）等于或小于View长（宽）-->
     <Button
         android:id="@+id/bt02"
-        android:textSize="8sp"
-        android:text="centerInside"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="fitS"
+        android:textSize="8sp"
         app:layout_constraintStart_toStartOf="@id/iv02"
-        />
+        app:layout_constraintTop_toTopOf="@+id/bt" />
 
-    <ImageView
-        android:id="@+id/iv02"
-        android:background="@color/colorPrimary"
-        android:scaleType="centerInside"
-        android:layout_marginLeft="20dp"
-        android:src="@mipmap/shali"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        app:layout_constraintStart_toEndOf="@id/iv01"
-        app:layout_constraintTop_toBottomOf="@+id/bt"/>
 
+    <!--centerInside 目的：
+                     1. 超出view，居中，按比例压缩，确保X/Y至少有一个填满view
+                     2. 不超出view，居中显示，不拉伸
+                     -->
     <Button
 
         android:id="@+id/bt03"
-        android:textSize="8sp"
-        android:text="centerInside"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="centerInside"
+        android:textSize="8sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv01"
-        />
-
-    <!--fitCenter : 按比例拉伸、压缩图片到view的宽度，居中显示-->
+        app:layout_constraintTop_toBottomOf="@+id/iv01" />
 
     <ImageView
-        android:background="@color/colorPrimary"
-        android:src="@mipmap/test01"
-        android:scaleType="fitCenter"
+        android:id="@+id/iv02"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginLeft="20dp"
+        android:background="@color/colorPrimary"
+        android:scaleType="fitXY"
+        android:src="@mipmap/test01"
+        app:layout_constraintStart_toEndOf="@id/iv01"
+        app:layout_constraintTop_toBottomOf="@+id/bt" />
+
+    <ImageView
+        android:id="@+id/iv01"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitEnd"
+        android:src="@mipmap/shali"
+        app:layout_constraintStart_toStartOf="@id/bt"
+        app:layout_constraintTop_toBottomOf="@+id/bt" />
+
+    <!--fitCenter : 目的：居中，按比例拉伸或压缩图片,确保X/Y至少有一个填满view -->
+
+    <ImageView
+        android:layout_width="750px"
+        android:layout_height="750px"
+        android:background="@color/colorPrimary"
+        android:scaleType="fitEnd"
+        android:src="@mipmap/icon_2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt03"/>
+        app:layout_constraintTop_toBottomOf="@+id/bt03" />
+
+    <!--center:居中，不拉伸或压缩图片 -->
+
+    <!--fitXY 不按比例拉伸或压缩，铺满铺满view-->
+
+    <!--fitStart：按比例拉伸或压缩，确保X/Y至少有一个填满view，依附在View的上方、左方-->
+
+    <!-- fitEnd：按比例拉伸或压缩，确保X/Y至少有一个填满view，依附在View的下方、右方-->
 
 
 </android.support.constraint.ConstraintLayout>
