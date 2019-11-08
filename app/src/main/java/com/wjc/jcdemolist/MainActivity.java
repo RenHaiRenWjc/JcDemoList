@@ -38,7 +38,7 @@ public class MainActivity extends BaseActivity {
     @Override
     public List<ActivityTypeBean> getList() {
         List<ActivityTypeBean> list = new ArrayList<>();
-        list.add(new ActivityTypeBean("跑马灯测试", MarqueeActivity.class));
+        list.add(new ActivityTypeBean("跑马灯、蜘蛛网格图", MarqueeActivity.class));
         list.add(new ActivityTypeBean("Rxbinding 防抖", RxbindingActivity.class));
         list.add(new ActivityTypeBean("mvpdemo01", LoginActivity.class));
         list.add(new ActivityTypeBean("mvpdemo02", com.wjc.jcdemolist.demo.mvp.mvpDemo02.login.LoginActivity.class));

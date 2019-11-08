@@ -8,18 +8,6 @@
     android:paddingLeft="100dp"
     tools:context="com.wjc.jcdemolist.itemActivity.MarqueeActivity">
 
-    <com.wjc.jcdemolist.demo.customView.CustomMarqueeView
-        android:id="@+id/cu_test"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:background="@color/colorPrimaryDark"
-        app:text_color="@color/colorAccent"
-        app:text_no_scroll_center="true"
-        app:text_pause_time="3000"
-        app:text_size="20sp"
-        app:text_speed="2" />
-
     <Button
         android:id="@+id/bt_pause"
         android:layout_width="100dp"
@@ -43,4 +31,20 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:text="长内容更新" />
+
+    <com.wjc.jcdemolist.demo.customView.CustomMarqueeView
+        android:id="@+id/cu_test"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="@color/colorPrimaryDark"
+        app:text_color="@color/colorAccent"
+        app:text_no_scroll_center="true"
+        app:text_pause_time="3000"
+        app:text_size="20sp"
+        app:text_speed="2" />
+
+    <com.wjc.jcdemolist.demo.customView.PathTest
+        android:layout_width="200dp"
+        android:layout_height="200dp"/>
 </LinearLayout>
