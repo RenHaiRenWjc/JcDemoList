@@ -57,7 +57,7 @@ public class CustomRoundViewWithPath extends View {
         canvas.save();
         canvas.clipPath(mClipPath);
         canvas.drawBitmap(mBitmap, 0, 0, mPaint);
-
+        canvas.restore(); // canvas 复原，如果之后没什么操作，也可以不用调用
     }
 
 }
