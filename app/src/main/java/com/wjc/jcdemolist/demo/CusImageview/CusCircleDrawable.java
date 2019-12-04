@@ -314,9 +314,9 @@ public class CusCircleDrawable extends Drawable {
                 canvas.drawOval(mDrawableRect, mBitmapPaint);
             }
         } else {
-            if (any(mCornersRounded)) {
+            if (any(mCornersRounded)) { // 是否有圆角
                 float radius = mCornerRadius;
-                if (mBorderWidth > 0) {
+                if (mBorderWidth > 0) { // 是否带有边框
                     canvas.drawRoundRect(mDrawableRect, radius, radius, mBitmapPaint);
                     canvas.drawRoundRect(mBorderRect, radius, radius, mBorderPaint);
                     redrawBitmapForSquareCorners(canvas);

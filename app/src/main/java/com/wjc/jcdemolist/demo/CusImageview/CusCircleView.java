@@ -143,7 +143,7 @@ public class CusCircleView extends ImageView {
         mMutateBackground = a.getBoolean(R.styleable.CusCircleView_riv_mutate_background, false);
         mIsOval = a.getBoolean(R.styleable.CusCircleView_riv_oval, false);
 
-        // 平铺模式
+
         final int tileMode = a.getInt(R.styleable.CusCircleView_riv_tile_mode, TILE_MODE_UNDEFINED);
         if (tileMode != TILE_MODE_UNDEFINED) {
             setTileModeX(parseTileMode(tileMode));
