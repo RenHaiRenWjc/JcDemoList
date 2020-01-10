@@ -3,6 +3,7 @@ package com.wjc.jcdemolist;
 import android.app.Application;
 
 import com.facebook.stetho.Stetho;
+import com.wjc.jcdemolist.Utils.SharedPreferencesUtil;
 import com.wjc.jcdemolist.demo.changeSkin.SkinEngine;
 import com.wjc.jcdemolist.demo.mvp.mvpDagger2Demo01.di.AppComponent;
 import com.wjc.jcdemolist.demo.mvp.mvpDagger2Demo01.di.AppModule;
@@ -28,6 +29,7 @@ public class JcApplication extends Application {
                 .appModule(new AppModule(this))
                 .build();
         SkinEngine.getInstance().init(this);
+        SharedPreferencesUtil.initSharedPreferences(this);
     }
 
     public AppComponent getAppComponent() {

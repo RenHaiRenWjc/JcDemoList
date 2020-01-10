@@ -29,13 +29,14 @@
             android:theme="@style/NoActionBar" />
         <activity android:name=".demo.mvp.mvpDemo01.Main2Activity" />
         <activity android:name=".demo.rxbinding_test.RxbindingActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".itemActivity.LauncherActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".itemActivity.MarqueeActivity" />
         <activity android:name=".itemActivity.ScaleTypeTestActivity" />
         <activity android:name=".demo.viewpagerDemo.Main4Activity" />
