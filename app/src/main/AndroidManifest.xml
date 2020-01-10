@@ -43,6 +43,7 @@
         <activity android:name=".itemActivity.XfermodeActivity" />
 
         <service android:name=".demo.ServiceDemo.ForegroundService" />
+        <activity android:name=".demo.customRv.CustomRvActivity"/>
     </application>
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 

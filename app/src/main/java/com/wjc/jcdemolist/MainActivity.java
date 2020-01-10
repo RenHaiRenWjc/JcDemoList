@@ -6,6 +6,7 @@ import com.wjc.jcdemolist.base.BaseActivity;
 import com.wjc.jcdemolist.bean.ActivityTypeBean;
 import com.wjc.jcdemolist.demo.changeSkin.ChangeSkinActivity;
 import com.wjc.jcdemolist.demo.ServiceDemo.ServiceDemoActivity;
+import com.wjc.jcdemolist.demo.customRv.CustomRvActivity;
 import com.wjc.jcdemolist.itemActivity.XfermodeActivity;
 import com.wjc.jcdemolist.demo.dispatch.dispatchDemo.Main5Activity;
 import com.wjc.jcdemolist.demo.dispatch.dispatchDemo02.Main6Activity;
@@ -54,6 +55,8 @@ public class MainActivity extends BaseActivity {
         list.add(new ActivityTypeBean("绘制paint和canvas", PaintAndCanvasActivity.class));
         list.add(new ActivityTypeBean(" 换肤", ChangeSkinActivity.class));
         list.add(new ActivityTypeBean(" 保活", ServiceDemoActivity.class));
+        list.add(new ActivityTypeBean("自定义下拉刷新", CustomRvActivity.class));
+
         return list;
     }
 }
