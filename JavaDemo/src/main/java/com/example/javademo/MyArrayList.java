@@ -85,6 +85,7 @@ public class MyArrayList<E> {
 
   public boolean isEmpty() {
     return size() == 0;
+
   }
 
   public void trimToSize() {
@@ -95,7 +96,7 @@ public class MyArrayList<E> {
     return new ArrayListIterator();
   }
 
-  public class ArrayListIterator implements Iterator<E> {
+  private class ArrayListIterator implements Iterator<E> { // 内部类、添加static后变为嵌套类
     private int current = 0;
 
     @Override
