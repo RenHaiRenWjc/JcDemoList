@@ -14,4 +14,15 @@
         android:text="创建数据库"
         android:layout_height="wrap_content"/>
 
+    <Button
+        android:id="@+id/bt_add_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="插入数据"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_create_table" />
+
+
+
 </android.support.constraint.ConstraintLayout>
