@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wjc.jcdemolist">
 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".JcApplication"
         android:allowBackup="true"
@@ -10,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".itemActivity.GestureTestActivity"></activity>
+        <activity android:name=".demo.KotlinDemo.KotlinActivity"></activity>
+        <activity android:name=".itemActivity.GestureTestActivity" />
         <activity android:name=".demo.ServiceDemo.ServiceDemoActivity" />
         <activity android:name=".demo.changeSkin.ChangeSkinActivity" />
         <activity android:name=".demo.PaintAndCanvas.PaintAndCanvasActivity" />
@@ -36,17 +40,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".itemActivity.MarqueeActivity" />
         <activity android:name=".itemActivity.ScaleTypeTestActivity" />
         <activity android:name=".demo.viewpagerDemo.Main4Activity" />
         <activity android:name=".itemActivity.XfermodeActivity" />
 
         <service android:name=".demo.ServiceDemo.ForegroundService" />
-        <activity android:name=".demo.customRv.CustomRvActivity"/>
-    </application>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
+        <activity android:name=".demo.customRv.CustomRvActivity" />
+    </application>
 
 </manifest>
