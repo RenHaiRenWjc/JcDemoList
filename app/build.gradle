@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.google.protobuf'  //声明插件
+apply plugin: 'com.google.protobuf'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'//声明插件
 
 android {
     compileSdkVersion 28
@@ -38,6 +42,12 @@ android {
         }
     }
 
+
+
+}
+
+repositories {
+    flatDir { dirs 'libs' }
 }
 
 protobuf {
@@ -93,4 +103,7 @@ dependencies {
     implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
 
     implementation 'com.google.protobuf:protobuf-java:3.5.1'
+
+   // implementation (name: 'Tool',ext: 'aar')
+
 }
