@@ -16,7 +16,7 @@ class KotlinActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_kotlin)
     val  mBtCreateTable=findViewById(R.id.bt_create_table) as Button;
-    val dbHelper = SQLiteOpenHelperUtils(this,"BookStore.db",null,1)
+    val dbHelper = SQLiteOpenHelperUtils(this,"BookStore.db",null,2)
     mBtCreateTable.setOnClickListener(View.OnClickListener { dbHelper.writableDatabase })
 
   }
