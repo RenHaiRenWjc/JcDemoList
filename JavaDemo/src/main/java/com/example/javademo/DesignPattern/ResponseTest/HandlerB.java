@@ -7,11 +7,9 @@ package com.example.javademo.DesignPattern.ResponseTest;
  */
 public class HandlerB extends Handler {
   @Override
-  public void handle() {
-    boolean hanldle = false;
+  public boolean doHandle() {
+    boolean handle = false;
     // todo
-    if (!hanldle && successor != null) {
-      successor.handle();
-    }
+    return handle;
   }
 }

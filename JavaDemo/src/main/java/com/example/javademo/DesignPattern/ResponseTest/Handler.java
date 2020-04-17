@@ -12,5 +12,12 @@ public abstract class Handler {
     this.successor = successor;
   }
 
-  public abstract void handle();
+  public final void handle() {
+    boolean handle = doHandle();
+    if (!handle && successor != null) {
+      successor.handle();
+    }
+  }
+
+  public abstract boolean doHandle();
 }
