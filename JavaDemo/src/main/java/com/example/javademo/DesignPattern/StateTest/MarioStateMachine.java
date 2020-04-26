@@ -9,6 +9,14 @@ public class MarioStateMachine {
   private int score;
   private State currentState;
 
+  public void setScore(int score) {
+    this.score = score;
+  }
+
+  public void setCurrentState(State currentState) {
+    this.currentState = currentState;
+  }
+
   public MarioStateMachine() {
     this.score = 0;
     this.currentState = State.SMALL;
