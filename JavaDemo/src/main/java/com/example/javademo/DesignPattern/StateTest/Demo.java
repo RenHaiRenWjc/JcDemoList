@@ -7,7 +7,7 @@ package com.example.javademo.DesignPattern.StateTest;
  */
 public class Demo {
   public static void main(String[] args) {
-    MarioStateMachine mario = new MarioStateMachine();
+    MarioStateMachine02 mario = new MarioStateMachine02();
     mario.obtainMushRoom();
     int score = mario.getScore();
     State state = mario.getCurrentState();
