@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".demo.KotlinDemo.KotlinActivity"></activity>
+        <activity android:name=".demo.WebViewTest.WebViewActivity"></activity>
+        <activity android:name=".demo.KotlinDemo.KotlinActivity" />
         <activity android:name=".itemActivity.GestureTestActivity" />
         <activity android:name=".demo.ServiceDemo.ServiceDemoActivity" />
         <activity android:name=".demo.changeSkin.ChangeSkinActivity" />
