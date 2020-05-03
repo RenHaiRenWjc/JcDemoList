@@ -22,6 +22,7 @@ public class LoginActivity01 extends BaseActivity<LoginContract.Presenter> {
             loginFragment01 = LoginFragment01.newInstance();
             ToolUtils.addFragmentToActivity(getSupportFragmentManager(), loginFragment01, R.id.fl_fragment);
         }
+
         DaggerLoginComponent.builder()
                 .appComponent(mApplication.getAppComponent())
                 .loginModule(new LoginModule(loginFragment01))

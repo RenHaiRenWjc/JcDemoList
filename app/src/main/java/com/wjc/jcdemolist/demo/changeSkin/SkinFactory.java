@@ -2,8 +2,8 @@ package com.wjc.jcdemolist.demo.changeSkin;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatDelegate;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AppCompatDelegate;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.wjc.jcdemolist.R;
-import com.wjc.jcdemolist.Utils.LogUtils;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;

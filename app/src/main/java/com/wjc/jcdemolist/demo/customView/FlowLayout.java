@@ -17,26 +17,21 @@
 package com.wjc.jcdemolist.demo.customView;
 
 import android.content.Context;
-import android.content.res.TypedArray;
-import android.support.v4.view.ViewConfigurationCompat;
+
+import androidx.core.view.ViewConfigurationCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import android.widget.OverScroller;
 import android.widget.Scroller;
 
-import com.wjc.jcdemolist.R;
 import com.wjc.jcdemolist.Utils.LogUtils;
 import com.wjc.jcdemolist.Utils.ToolUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.security.auth.login.LoginException;
 
 public class FlowLayout extends ViewGroup {
 

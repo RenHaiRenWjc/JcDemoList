@@ -10,8 +10,6 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
-import com.wjc.jcdemolist.Utils.LogUtils;
-
 /**
  * ClassName:com.wjc.jcdemolist.demo.customView
  * Description:https://github.com/harvic/AndroidCustomCtrlRes/blob/master/34556-%E7%AC%AC1%E7%AB%A0%E5%92%8C%E7%AC%AC11%E7%AB%A0%EF%BC%88%E4%B9%A6%E7%AD%BE%E7%9B%AE%E5%BD%95%EF%BC%89.pdf
@@ -34,12 +32,12 @@ public class PathTest extends View {
         init();
     }
 
-    public PathTest(Context context, @Nullable @android.support.annotation.Nullable AttributeSet attrs) {
+    public PathTest(Context context,  @androidx.annotation.Nullable AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public PathTest(Context context, @Nullable @android.support.annotation.Nullable AttributeSet attrs, int defStyleAttr) {
+    public PathTest(Context context,  @androidx.annotation.Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }

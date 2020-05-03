@@ -28,11 +28,11 @@ public class LoadingView extends View {
         super(context);
     }
 
-    public LoadingView(Context context, @Nullable @android.support.annotation.Nullable AttributeSet attrs) {
+    public LoadingView(Context context,  @androidx.annotation.Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public LoadingView(Context context, @Nullable @android.support.annotation.Nullable AttributeSet attrs, int defStyleAttr) {
+    public LoadingView(Context context,  @androidx.annotation.Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

@@ -1,6 +1,6 @@
 package com.wjc.jcdemolist.demo.mvp.mvpDemo01;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.wjc.jcdemolist.R;

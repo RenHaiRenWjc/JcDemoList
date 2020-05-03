@@ -1,10 +1,8 @@
 package com.wjc.jcdemolist.demo.jsonDemo;
 
-import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.google.gson.JsonArray;
 import com.wjc.jcdemolist.R;
 import com.wjc.jcdemolist.Utils.LogUtils;
 
@@ -15,7 +13,6 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;

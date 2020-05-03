@@ -31,7 +31,6 @@ public class LoginFragment extends BaseFragment<LoginContract.Presenter>
     EditText pwd;
     @BindView(R.id.bt_ok)
     Button btOk;
-    Unbinder unbinder;
 
     protected static LoginFragment newInstance() {
         return new LoginFragment();
@@ -63,7 +62,7 @@ public class LoginFragment extends BaseFragment<LoginContract.Presenter>
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
+
     }
 
     @OnClick(R.id.bt_ok)

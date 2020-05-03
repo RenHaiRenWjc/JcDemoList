@@ -1,21 +1,12 @@
 package com.wjc.jcdemolist.demo.changeSkin;
 
-import android.content.Context;
-import android.content.res.AssetManager;
-import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 
 import com.wjc.jcdemolist.R;
-import com.wjc.jcdemolist.Utils.LogUtils;
-
-import java.io.File;
 
 public class ChangeSkinActivity extends AppCompatActivity {
     private static final String TAG = "ChangeSkinActivity";

@@ -1,13 +1,12 @@
 package com.wjc.jcdemolist.demo.PaintAndCanvas;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.wjc.jcdemolist.R;
-import com.wjc.jcdemolist.demo.customView.DrawGestureView;
 
 import java.util.ArrayList;
 import java.util.List;

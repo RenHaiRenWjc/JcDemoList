@@ -4,8 +4,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.DecelerateInterpolator;
-import android.widget.ImageView;
 
 import com.wjc.jcdemolist.Utils.LogUtils;
 import com.wjc.jcdemolist.Utils.ToolUtils;
@@ -15,7 +13,7 @@ import com.wjc.jcdemolist.Utils.ToolUtils;
  * Description:
  * JcChen on 2019/9/30 10:46
  */
-public class CustomBgChangeIv extends android.support.v7.widget.AppCompatImageView {
+public class CustomBgChangeIv extends androidx.appcompat.widget.AppCompatImageView {
     private static final String TAG = "CustomImageView";
 
     public CustomBgChangeIv(Context context) {
