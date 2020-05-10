@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:clipToPadding="false"
+    android:clipChildren="false"
     tools:context=".demo.rxbinding_test.RxbindingActivity">
 
     <Button
@@ -59,5 +61,31 @@
         android:text="验证码"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_ok" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="50dp"
+        android:background="#33ff"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt2">
+
+
+        <Button
+            android:id="@+id/bt3"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="验证码fadafa"
+
+            android:translationY="-50dp"
+            android:background="@color/color2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
