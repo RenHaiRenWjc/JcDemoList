@@ -28,7 +28,7 @@ public class InjectUtils {
     Class<? extends Activity> activityClass = activity.getClass();
     Method[] methods = activityClass.getDeclaredMethods();//拿到这个类所有方法
     for (Method method : methods) {
-      LogUtils.i(TAG, "injectEvent:method -- "+method.getName());
+      LogUtils.i(TAG, "injectEvent:method -- " + method.getName());
       Annotation[] annotations = method.getAnnotations();//拿到方法上的所有注解
       for (Annotation annotation : annotations) {
         Class<? extends Annotation> annotationType = annotation.annotationType(); // 注解的注解
@@ -41,12 +41,16 @@ public class InjectUtils {
             int[] viewIds = (int[]) valudeMethod.invoke(annotation);//注解的方法里面返回值
 
             method.setAccessible(true);
-            ListenerInvocationHandler<Activity> hanlder = new ListenerInvocationHandler<>(method, activity);//执行如OnClick方法，然后给每个 view 设置监听
-            Object listenerProxy = Proxy.newProxyInstance(listenerType.getClassLoader(), new Class[]{listenerType}, hanlder);
+            // ListenerInvocationHandler<Activity> hanlder = new ListenerInvocationHandler<>(method, activity);
+            Object listenerProxy = Proxy.newProxyInstance(listenerType.getClassLoader(),
+              new Class[]{listenerType},  //动态代理生成 View.OnClickListener 这个类
+              (proxy, method1, args) -> {//  proxy:View.OnClickListener  method1:onClick 相当于监听有没有调用该方法，如果有，则反射调用该方法
+                return method1.invoke(proxy, args);
+              });
             for (int viewId : viewIds) {
               View view = activity.findViewById(viewId);
               Method setter = view.getClass().getMethod(listenerSetter, listenerType);//setOnClickListener
-              setter.invoke(view,listenerProxy);
+              setter.invoke(view, listenerProxy);
             }
           } catch (Exception e) {
             e.printStackTrace();
