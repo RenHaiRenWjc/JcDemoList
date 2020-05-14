@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import com.wjc.jcdemolist.base.BaseActivity;
 import com.wjc.jcdemolist.bean.ActivityTypeBean;
+import com.wjc.jcdemolist.demo.JcRetrofit.Main8Activity;
 import com.wjc.jcdemolist.demo.KotlinDemo.KotlinActivity;
 import com.wjc.jcdemolist.demo.WebViewTest.WebViewActivity;
 import com.wjc.jcdemolist.demo.changeSkin.ChangeSkinActivity;
@@ -60,6 +61,7 @@ public class MainActivity extends BaseActivity {
         list.add(new ActivityTypeBean("自定义下拉刷新", CustomRvActivity.class));
         list.add(new ActivityTypeBean("数据库", KotlinActivity.class));
         list.add(new ActivityTypeBean("WebView测试", WebViewActivity.class));
+        list.add(new ActivityTypeBean("自定义Retrofit", Main8Activity.class));
 
         return list;
     }

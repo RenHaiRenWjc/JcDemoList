@@ -1,7 +1,6 @@
 package com.wjc.jcdemolist.demo.viewpagerDemo.customTabNav;
 
 
-import com.hncx.xxm.ui.widget.magicindicator.buildins.commonnavigator.model.PositionData;
 
 import java.util.List;
 
