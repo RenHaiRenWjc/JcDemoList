@@ -9,13 +9,22 @@
     tools:context="com.wjc.jcdemolist.demo.viewpagerDemo.Main4Activity">
 
     <com.google.android.material.tabs.TabLayout
+        app:tabIndicatorColor="@color/color6"
+        app:tabSelectedTextColor="@color/color7"
         android:id="@+id/tl_nav"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"></com.google.android.material.tabs.TabLayout>
+        app:tabGravity="fill"
+        app:tabPaddingStart="50dp"
+        app:tabPaddingEnd="50dp"
+        android:layout_height="50dp">
+
+    </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vp_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></androidx.viewpager.widget.ViewPager>
+        android:layout_height="match_parent">
+
+    </androidx.viewpager.widget.ViewPager>
 
 </LinearLayout>

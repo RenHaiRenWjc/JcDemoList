@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/color4"
         android:gravity="center"
         android:text="30sp" />
 
