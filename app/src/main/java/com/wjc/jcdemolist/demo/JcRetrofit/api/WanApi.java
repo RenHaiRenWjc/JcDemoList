@@ -1,4 +1,4 @@
-package com.wjc.jcdemolist.demo.JcRetrofit;
+package com.wjc.jcdemolist.demo.JcRetrofit.api;
 
 import com.wjc.jcdemolist.demo.JcRetrofit.bean.ArticleList;
 import com.wjc.jcdemolist.demo.JcRetrofit.bean.ResponseData;
