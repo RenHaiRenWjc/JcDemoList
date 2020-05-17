@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 
 import com.wjc.jcdemolist.Utils.LogUtils;
@@ -41,11 +42,12 @@ public class InjectUtils {
             int[] viewIds = (int[]) valudeMethod.invoke(annotation);//注解的方法里面返回值
 
             method.setAccessible(true);
-            // ListenerInvocationHandler<Activity> hanlder = new ListenerInvocationHandler<>(method, activity);
+//            ListenerInvocationHandler<Activity> hanlder = new ListenerInvocationHandler<>(method, activity);
+//            Object listenerProxy = Proxy.newProxyInstance(listenerType.getClassLoader(), new Class[]{listenerType}, hanlder);
             Object listenerProxy = Proxy.newProxyInstance(listenerType.getClassLoader(),
               new Class[]{listenerType},  //动态代理生成 View.OnClickListener 这个类
               (proxy, method1, args) -> {//  proxy:View.OnClickListener  method1:onClick 相当于监听有没有调用该方法，如果有，则反射调用该方法
-                return method1.invoke(proxy, args);
+              return method.invoke(activity, args);
               });
             for (int viewId : viewIds) {
               View view = activity.findViewById(viewId);
@@ -107,6 +109,8 @@ public class InjectUtils {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+      //LogUtils.i(TAG, "invoke:proxy= " + proxy + "，method==" + method);
+      Log.i(TAG, "invoke: method=" + method + ",target=" + target);
       return this.method.invoke(target, args);
     }
   }
