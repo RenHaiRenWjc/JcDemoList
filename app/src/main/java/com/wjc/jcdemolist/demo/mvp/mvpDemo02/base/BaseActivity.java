@@ -28,6 +28,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         mUnbinder = ButterKnife.bind(this);
         mContext = this;
         initData();
+       // test
     }
 
     @Override
