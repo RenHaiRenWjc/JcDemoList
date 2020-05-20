@@ -105,5 +105,4 @@ dependencies {
 
     // implementation (name: 'Tool',ext: 'aar')
     implementation 'com.google.android.material:material:1.0.0'
-
 }

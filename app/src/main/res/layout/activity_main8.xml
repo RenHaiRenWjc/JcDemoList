@@ -6,4 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".demo.JcRetrofit.Main8Activity">
 
+    <DatePicker
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:id="@+id/datepicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
