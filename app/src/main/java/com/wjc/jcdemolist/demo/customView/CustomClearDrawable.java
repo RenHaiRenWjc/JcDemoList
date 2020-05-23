@@ -2,7 +2,6 @@ package com.wjc.jcdemolist.demo.customView;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -24,7 +23,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.wjc.jcdemolist.R;
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 
 /**
  * ClassName:com.wjc.jcdemolist.demo.customView
@@ -148,7 +147,7 @@ public class CustomClearDrawable extends Drawable {
         canvas.drawPath(path,mLinePaint);
 //        canvas.drawLine(0, mCenterY, mWidth, mCenterY, mLinePaint);
         canvas.drawLine(mCenterX, 0, mCenterX, mHeight, mLinePaint);
-        LogUtils.i(TAG, "draw: mAnimState=" + mAnimState);
+        LogTools.i(TAG, "draw: mAnimState=" + mAnimState);
         switch (mAnimState) {
             case state_origin:
                 drawCross(canvas, mPaint);
@@ -187,7 +186,7 @@ public class CustomClearDrawable extends Drawable {
 
     @Override
     public void setAlpha(int alpha) {
-        LogUtils.i(TAG, "setAlpha: alpha = " + alpha);
+        LogTools.i(TAG, "setAlpha: alpha = " + alpha);
         mPaint.setAlpha(alpha);
         invalidateSelf();
     }
@@ -250,13 +249,13 @@ public class CustomClearDrawable extends Drawable {
     }
 
     private ValueAnimator createAnimator(int drawType, long duration, TimeInterpolator interpolator) {
-//        LogUtils.i(TAG, "createAnimator: drawType=" + drawType + ",duration=" + duration);
+//        LogTools.i(TAG, "createAnimator: drawType=" + drawType + ",duration=" + duration);
         ValueAnimator animator = ValueAnimator.ofFloat(0.0f, 1.0f);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float value = (Float) animation.getAnimatedValue();
-                LogUtils.i(TAG, "onAnimationUpdate: value = " + value + ",mAnimState=" + mAnimState+",drawType="+drawType);
+                LogTools.i(TAG, "onAnimationUpdate: value = " + value + ",mAnimState=" + mAnimState+",drawType="+drawType);
                 mAnimState = drawType;
                 mPointPosScale = value;
                 invalidateSelf();
@@ -264,7 +263,7 @@ public class CustomClearDrawable extends Drawable {
         });
         animator.setDuration(duration);
         animator.setInterpolator(interpolator);
-//        LogUtils.i(TAG, "createAnimator: end");
+//        LogTools.i(TAG, "createAnimator: end");
         return animator;
     }
 
@@ -290,7 +289,7 @@ public class CustomClearDrawable extends Drawable {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float value = (Float) animation.getAnimatedValue();
-                LogUtils.d(TAG, "onAnimationUpdate: value = " + value + ",mAnimState=" + mAnimState+",drawType="+state_rotate);
+                LogTools.d(TAG, "onAnimationUpdate: value = " + value + ",mAnimState=" + mAnimState+",drawType="+state_rotate);
                 mAnimState = state_rotate;
                 mCrossScale = value;
                 invalidateSelf();

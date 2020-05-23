@@ -6,9 +6,6 @@ import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 
-import com.wjc.jcdemolist.R;
-import com.wjc.jcdemolist.Utils.LogUtils;
-
 import java.io.File;
 import java.lang.reflect.Method;
 

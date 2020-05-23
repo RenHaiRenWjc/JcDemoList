@@ -10,11 +10,17 @@ import android.widget.Button;
 
 import com.wjc.jcdemolist.R;
 import com.wjc.jcdemolist.Utils.Reflect.InjectUtils;
+import com.wjc.jcdemolist.Utils.Reflect.InjectView;
 import com.wjc.jcdemolist.Utils.Reflect.onClick;
+import com.wjc.jcdemolist.Utils.Reflect.onClick02;
 
 public class ChangeSkinActivity extends AppCompatActivity {
   private static final String TAG = "ChangeSkinActivity";
   private SkinFactory mSkinFactory;
+
+
+  @InjectView(R.id.bt_test)
+  Button btTest;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -42,11 +48,13 @@ public class ChangeSkinActivity extends AppCompatActivity {
     setContentView(R.layout.activity_change_skiy);
     Button bt = findViewById(R.id.bt_test);
     bt.setBackgroundResource(R.mipmap.ic_launcher_round);
-    InjectUtils.injectEvent(this);
+    InjectUtils.injectEvent02(this);
+    InjectUtils.injectView(this);
+    btTest.setText("跳转到第二个页面--");
 
   }
 
-  @onClick(id = {R.id.bt_test, R.id.bt_test})
+  @onClick02(id = {R.id.bt_test, R.id.bt_test02})
   public void onClick(View view) {
     switch (view.getId()) {
       case R.id.bt_test02:

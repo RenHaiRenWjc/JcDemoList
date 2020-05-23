@@ -5,7 +5,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 import com.wjc.jcdemolist.Utils.ToolUtils;
 
 /**
@@ -30,7 +30,7 @@ public class CustomBgChangeIv extends androidx.appcompat.widget.AppCompatImageVi
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        LogUtils.i(TAG, "onTouchEvent: event=" + ToolUtils.fetchEventAction(event.getAction()));
+        LogTools.i(TAG, "onTouchEvent: event=" + ToolUtils.fetchEventAction(event.getAction()));
         boolean result = false;
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:

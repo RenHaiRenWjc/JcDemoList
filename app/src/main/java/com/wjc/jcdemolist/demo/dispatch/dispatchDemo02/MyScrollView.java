@@ -2,7 +2,9 @@ package com.wjc.jcdemolist.demo.dispatch.dispatchDemo02;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import com.wjc.jcdemolist.Utils.LogUtils;
+
+import com.wjc.jcdemolist.Utils.LogTools;
+
 import android.view.MotionEvent;
 import android.widget.ScrollView;
 
@@ -35,13 +37,13 @@ public class MyScrollView extends ScrollView {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 getParent().requestDisallowInterceptTouchEvent(true);
-                LogUtils.i(TAG, "dispatchTouchEvent: ACTION_DOWN");
+                LogTools.i(TAG, "dispatchTouchEvent: ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
                 int deltaX = x - mLastX;
                 int deltaY = y - mLastY;
-                LogUtils.i(TAG, "dispatchTouchEvent:action " + event.getAction());
-                LogUtils.i(TAG, "dispatchTouchEvent:  getScrollY()=" + getScrollY()+",MeasuredHeight()="+ this.getMeasuredHeight()+ ",deltaY=" + deltaY);
+                LogTools.i(TAG, "dispatchTouchEvent:action " + event.getAction());
+                LogTools.i(TAG, "dispatchTouchEvent:  getScrollY()=" + getScrollY()+",MeasuredHeight()="+ this.getMeasuredHeight()+ ",deltaY=" + deltaY);
                 if (deltaY > 0 && getScrollY() == 0) {//顶部下滑
                     getParent().requestDisallowInterceptTouchEvent(false); //父类拦截
                     return false;
@@ -55,7 +57,7 @@ public class MyScrollView extends ScrollView {
         mLastY = y;
 
 //        boolean result = super.dispatchTouchEvent(event);
-//        LogUtils.i(TAG, "dispatchTouchEvent: result=" + result);
+//        LogTools.i(TAG, "dispatchTouchEvent: result=" + result);
         return true;
     }
 }

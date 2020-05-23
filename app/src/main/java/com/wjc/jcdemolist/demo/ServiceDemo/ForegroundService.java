@@ -11,7 +11,7 @@ import androidx.core.app.NotificationCompat;
 
 import androidx.annotation.Nullable;
 
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 
 /**
  * ClassName:com.wjc.jcdemolist.demo.keepAlive
@@ -30,7 +30,7 @@ public class ForegroundService extends Service {
 
     @Override
     public void onCreate() {
-        LogUtils.i(TAG, "onCreate: ");
+        LogTools.i(TAG, "onCreate: ");
         super.onCreate();
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR2) { // 4.3以下
             //将service设置成前台服务，并且不显示通知栏消息
@@ -65,7 +65,7 @@ public class ForegroundService extends Service {
 
         @Override
         public void onCreate() {
-            LogUtils.i(TAG, "onCreate: ");
+            LogTools.i(TAG, "onCreate: ");
             super.onCreate();
             // 让服务变前台服务
             startForeground(SERVICE_ID, new Notification());

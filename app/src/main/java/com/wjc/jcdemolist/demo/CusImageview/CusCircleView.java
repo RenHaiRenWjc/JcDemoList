@@ -33,7 +33,7 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 
 import com.wjc.jcdemolist.R;
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 
 
 @SuppressWarnings("UnusedDeclaration")
@@ -264,7 +264,7 @@ public class CusCircleView extends ImageView {
             try {
                 d = rsrc.getDrawable(mResource);
             } catch (Exception e) {
-                LogUtils.w(TAG, "Unable to find resource: " + mResource + " " + e.toString());
+                LogTools.w(TAG, "Unable to find resource: " + mResource + " " + e.toString());
                 // Don't try again.
                 mResource = 0;
             }

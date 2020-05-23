@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.wjc.jcdemolist.R;
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,7 +37,7 @@ public class JsonActivity extends AppCompatActivity {
 
     private void createJson() throws JSONException, IOException {
         File file = new File(getFilesDir(), "jc.json");
-        LogUtils.i(TAG, "createJson: dir=" + getFilesDir());
+        LogTools.i(TAG, "createJson: dir=" + getFilesDir());
         JSONObject student = new JSONObject();
         student.put("name", "jc");
         student.put("sex", "男");
@@ -57,7 +57,7 @@ public class JsonActivity extends AppCompatActivity {
         FileOutputStream fos = new FileOutputStream(file);
         fos.write(student.toString().getBytes());
         fos.close();
-        LogUtils.i(TAG, "createJson: " + student.toString());
+        LogTools.i(TAG, "createJson: " + student.toString());
     }
 
     private void parseJson() throws IOException, JSONException {
@@ -91,7 +91,7 @@ public class JsonActivity extends AppCompatActivity {
             student.setCourse(course);
         }
 
-        LogUtils.i(TAG, "parseJson: " + student.getName());
+        LogTools.i(TAG, "parseJson: " + student.getName());
     }
 }
 

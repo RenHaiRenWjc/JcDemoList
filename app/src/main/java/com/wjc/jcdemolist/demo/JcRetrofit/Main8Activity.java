@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.wjc.jcdemolist.R;
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 import com.wjc.jcdemolist.demo.JcRetrofit.api.JcWanApi;
 import com.wjc.jcdemolist.demo.JcRetrofit.api.WanApi;
 import com.wjc.jcdemolist.demo.JcRetrofit.bean.ResponseData;
@@ -81,7 +81,7 @@ public class Main8Activity extends AppCompatActivity {
       public void onResponse(Call<ResponseData<Character>> call, Response<ResponseData<Character>> response) {
         if (response.isSuccessful()) {
           ResponseData body = response.body();
-          LogUtils.i(TAG, "onResponse: body=" + body.getErrorCode());
+          LogTools.i(TAG, "onResponse: body=" + body.getErrorCode());
         }
       }
 

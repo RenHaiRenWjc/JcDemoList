@@ -1,11 +1,10 @@
 package com.wjc.jcdemolist.demo.mvp.mvpDemo02.login;
 
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
@@ -36,7 +35,7 @@ public class LoginPresenter implements LoginContract.Presenter {
 
     @Override
     public void start() {
-        LogUtils.i(TAG, "start: ");
+        LogTools.i(TAG, "start: ");
     }
 
     @Override

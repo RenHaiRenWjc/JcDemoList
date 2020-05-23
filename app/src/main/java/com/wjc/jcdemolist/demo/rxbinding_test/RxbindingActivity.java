@@ -10,7 +10,7 @@ import android.widget.Toast;
 import com.jakewharton.rxbinding3.view.RxView;
 import com.jakewharton.rxbinding3.widget.RxTextView;
 import com.wjc.jcdemolist.R;
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,7 +63,7 @@ public class RxbindingActivity extends AppCompatActivity {
             case R.id.bt1://防抖 1s
                 RxView.clicks(bt1).throttleFirst(1, TimeUnit.SECONDS)
                         .subscribeOn(AndroidSchedulers.mainThread())
-                        .subscribe(v -> LogUtils.i(TAG, "onViewClicked: "));
+                        .subscribe(v -> LogTools.i(TAG, "onViewClicked: "));
                 break;
         }
     }
@@ -102,7 +102,7 @@ public class RxbindingActivity extends AppCompatActivity {
 //            }
 //        })
                 .subscribe(o -> {
-                    LogUtils.i(TAG, "test04---: o=" + o);
+                    LogTools.i(TAG, "test04---: o=" + o);
                 });
     }
 
@@ -111,7 +111,7 @@ public class RxbindingActivity extends AppCompatActivity {
                 .doOnNext(new Consumer<Unit>() {
                     @Override
                     public void accept(Unit aBoolean) throws Exception {
-                        LogUtils.i(TAG, "accept: Thread=" + Thread.currentThread());
+                        LogTools.i(TAG, "accept: Thread=" + Thread.currentThread());
                         bt2.setEnabled(false);
                     }
                 }).subscribeOn(AndroidSchedulers.mainThread())
@@ -127,7 +127,7 @@ public class RxbindingActivity extends AppCompatActivity {
 
                                 @Override
                                 public void onNext(Long aLong) {
-                                    LogUtils.i(TAG, "test03:--- thread=" + Thread.currentThread());
+                                    LogTools.i(TAG, "test03:--- thread=" + Thread.currentThread());
                                     bt2.setText("剩余" + (20 - aLong) + " s");
                                 }
 
@@ -138,7 +138,7 @@ public class RxbindingActivity extends AppCompatActivity {
 
                                 @Override
                                 public void onComplete() {
-                                    LogUtils.i(TAG, "test03:--- thread--=" + Thread.currentThread());
+                                    LogTools.i(TAG, "test03:--- thread--=" + Thread.currentThread());
                                     bt2.setText("获取验证码");
                                     bt2.setEnabled(true);
                                 }
@@ -168,12 +168,12 @@ public class RxbindingActivity extends AppCompatActivity {
                 .subscribe(new Observer<CharSequence>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        LogUtils.i(TAG, "onSubscribe: ");
+                        LogTools.i(TAG, "onSubscribe: ");
                     }
 
                     @Override
                     public void onNext(CharSequence charSequence) {
-                        LogUtils.i(TAG, "onNext: charSequence=" + charSequence);
+                        LogTools.i(TAG, "onNext: charSequence=" + charSequence);
                     }
 
                     @Override

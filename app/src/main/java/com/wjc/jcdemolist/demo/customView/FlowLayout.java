@@ -27,7 +27,7 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.widget.Scroller;
 
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 import com.wjc.jcdemolist.Utils.ToolUtils;
 
 import java.util.ArrayList;
@@ -94,7 +94,7 @@ public class FlowLayout extends ViewGroup {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        LogUtils.i(TAG, "onInterceptTouchEvent: ev="+ev.getAction());
+        LogTools.i(TAG, "onInterceptTouchEvent: ev="+ev.getAction());
         boolean intercepted = false;
         float xInterceptX = ev.getX();
         float yInterceptY = ev.getY();
@@ -128,7 +128,7 @@ public class FlowLayout extends ViewGroup {
         if(!scrollable){
             return  super.onTouchEvent(event);
         }
-        LogUtils.i(TAG, "onTouchEvent: event="+event.getAction());
+        LogTools.i(TAG, "onTouchEvent: event="+event.getAction());
         float currY = event.getY();
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:

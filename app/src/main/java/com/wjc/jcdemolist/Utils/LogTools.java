@@ -11,7 +11,7 @@ import java.util.Locale;
 /**
  * 日志控制
  */
-public class LogUtils {
+public class LogTools {
     private final static String TAG = "-JC-";
     private final static boolean sOpenLog = true;
     private final static boolean sOpenLogToFile = false;
@@ -132,7 +132,7 @@ public class LogUtils {
      */
     public static void t(String tag, String str) {
         if (sOpenLog) {
-            LogUtils.i(tag, "DebugInfo: " + str);
+            LogTools.i(tag, "DebugInfo: " + str);
             Throwable e = new Throwable(tag);
             e.printStackTrace();
         }

@@ -1,20 +1,14 @@
 package com.wjc.jcdemolist.demo.mvp.mvpDagger2Demo01.login;
 
-import android.util.Log;
-
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 import com.wjc.jcdemolist.demo.mvp.mvpDagger2Demo01.base.AbsPresenter;
 
 
-import java.util.concurrent.TimeUnit;
-
 import javax.inject.Inject;
 
-import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 /**
@@ -39,7 +33,7 @@ public class LoginPresenter01 extends AbsPresenter<LoginContract.Model, LoginCon
 
     @Override
     public void login(String mobile, String pwd) {
-        LogUtils.d(TAG, "login() called with: mobile = [" + mobile + "], pwd = [" + pwd + "]");
+        LogTools.d(TAG, "login() called with: mobile = [" + mobile + "], pwd = [" + pwd + "]");
         mModel.login(mobile, pwd)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -56,7 +50,7 @@ public class LoginPresenter01 extends AbsPresenter<LoginContract.Model, LoginCon
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtils.i(TAG, "onError: e=" + e);
+                        LogTools.i(TAG, "onError: e=" + e);
                     }
 
                     @Override

@@ -2,12 +2,10 @@ package com.wjc.jcdemolist.demo.customView;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 
 /**
  * ClassName:com.wjc.jcdemolist.demo.customView
@@ -81,14 +79,14 @@ public class CustomViewGroup extends ViewGroup {
             default:
                 break;
         }
-        LogUtils.i(TAG, "onMeasure: w=" + width + ",h=" + height);
+        LogTools.i(TAG, "onMeasure: w=" + width + ",h=" + height);
         // 4. 保存自身尺寸
         setMeasuredDimension(width, height);
     }
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        LogUtils.d(TAG, "onLayout() called with: changed = [" + changed + "], l = [" + l + "], " +
+        LogTools.d(TAG, "onLayout() called with: changed = [" + changed + "], l = [" + l + "], " +
                 "t = [" + t + "], r = [" + r + "], b = [" + b + "]");
         int left = 0, top = 0, right = 0, bottom = 0;
         for (int i = 0; i < getChildCount(); i++) {

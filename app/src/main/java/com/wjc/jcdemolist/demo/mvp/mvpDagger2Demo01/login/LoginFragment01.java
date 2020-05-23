@@ -7,14 +7,13 @@ import android.widget.EditText;
 import com.jakewharton.rxbinding3.view.RxView;
 import com.jakewharton.rxbinding3.widget.RxTextView;
 import com.wjc.jcdemolist.R;
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 import com.wjc.jcdemolist.demo.mvp.mvpDagger2Demo01.base.BaseFragment;
 
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import butterknife.Unbinder;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 
@@ -59,7 +58,7 @@ public class LoginFragment01 extends BaseFragment<LoginContract.Presenter> imple
 
     @Override
     public void loginSuccess(LoginContract.Model result) {
-        LogUtils.i(TAG, "loginSuccess: result=" + result.getMsg() + ", is " + result.isSuccess());
+        LogTools.i(TAG, "loginSuccess: result=" + result.getMsg() + ", is " + result.isSuccess());
     }
 
     @Override

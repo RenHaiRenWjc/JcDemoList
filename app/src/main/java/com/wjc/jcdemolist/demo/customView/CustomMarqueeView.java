@@ -11,7 +11,7 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 
 import com.wjc.jcdemolist.R;
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 import com.wjc.jcdemolist.Utils.ToolUtils;
 
 /**
@@ -67,7 +67,7 @@ public class CustomMarqueeView extends AppCompatTextView {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        LogUtils.i(TAG, "-------------onSizeChanged: ------------");
+        LogTools.i(TAG, "-------------onSizeChanged: ------------");
         initMarqueeText();
     }
 
@@ -151,7 +151,7 @@ public class CustomMarqueeView extends AppCompatTextView {
 
     private void drawMarqueeText(Canvas canvas) {
         if (!isRunning) {
-            LogUtils.i(TAG, "drawMarqueeText: pause");
+            LogTools.i(TAG, "drawMarqueeText: pause");
             if (isShown()) {
                 drawText(canvas, 0, mHeight / 2);  //从坐标0开始绘制
             }
@@ -159,7 +159,7 @@ public class CustomMarqueeView extends AppCompatTextView {
         }
         switch (mTitleType) {
             case TYPE_NO_SCROLL:
-                LogUtils.i(TAG, "跑马灯标题不滚动");
+                LogTools.i(TAG, "跑马灯标题不滚动");
                 if (mDrawingText != null && !mDrawingText.equals("")) {
                     if (mCenterNoScroll) {
                         mTextPaint.setTextAlign(Paint.Align.CENTER);
@@ -201,7 +201,7 @@ public class CustomMarqueeView extends AppCompatTextView {
                     }
 
                 } else {
-                    LogUtils.d(TAG, "drawMarqueeText mMarqueeText是空的");
+                    LogTools.d(TAG, "drawMarqueeText mMarqueeText是空的");
                 }
                 break;
         }

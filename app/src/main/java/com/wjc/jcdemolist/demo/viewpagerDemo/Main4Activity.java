@@ -12,12 +12,11 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.wjc.jcdemolist.R;
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +63,7 @@ public class Main4Activity extends AppCompatActivity {
       @Nullable
       @Override
       public CharSequence getPageTitle(int position) {
-        // LogUtils.i(TAG, "getPageTitle: position=" + position);
+        // LogTools.i(TAG, "getPageTitle: position=" + position);
         return titles.get(position);
       }
 
@@ -76,7 +75,7 @@ public class Main4Activity extends AppCompatActivity {
       @NonNull
       @Override
       public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        //  LogUtils.i(TAG, "instantiateItem: pos=" + position);
+        //  LogTools.i(TAG, "instantiateItem: pos=" + position);
         return super.instantiateItem(container, position);
       }
 
@@ -94,17 +93,17 @@ public class Main4Activity extends AppCompatActivity {
   private ViewPager.OnPageChangeListener pageChangeListener = new ViewPager.OnPageChangeListener() {
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-//      LogUtils.i(TAG, "onPageScrolled: position=" + position);
+//      LogTools.i(TAG, "onPageScrolled: position=" + position);
     }
 
     @Override
     public void onPageSelected(int position) {
-      LogUtils.i(TAG, "onPageSelected: position=" + position);
+      LogTools.i(TAG, "onPageSelected: position=" + position);
     }
 
     @Override
     public void onPageScrollStateChanged(int state) {
-//      LogUtils.i(TAG, "onPageScrollStateChanged: state=" + state);
+//      LogTools.i(TAG, "onPageScrollStateChanged: state=" + state);
     }
   };
 
@@ -112,7 +111,7 @@ public class Main4Activity extends AppCompatActivity {
   private TabLayout.OnTabSelectedListener listener = new TabLayout.OnTabSelectedListener() {
     @Override
     public void onTabSelected(TabLayout.Tab tab) {
-      LogUtils.i(TAG, "onTabSelected: --" + tab.getText().toString());
+      LogTools.i(TAG, "onTabSelected: --" + tab.getText().toString());
     }
 
     @Override

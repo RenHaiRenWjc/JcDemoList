@@ -10,7 +10,6 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Region;
 import android.graphics.Shader;
@@ -21,7 +20,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 import com.wjc.jcdemolist.R;
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 
 /**
  * ClassName:com.wjc.jcdemolist.demo.customView
@@ -83,7 +82,7 @@ public class CustomRoundView extends View {
     private void processRoundBitmap02(Canvas canvas, float x, float y) {
         canvas.save();
         mPaint.setAntiAlias(true);
-        LogUtils.i(TAG, "onDraw: x=" + x + ",y=" + y + ",width=" + width + ",height=" + height);
+        LogTools.i(TAG, "onDraw: x=" + x + ",y=" + y + ",width=" + width + ",height=" + height);
         canvas.clipRect(x, y, x + width, y + height);  //用于裁剪画布，也就是设置画布的显示区域
         canvas.drawBitmap(mBitmap, x, y, mPaint);
 
@@ -114,7 +113,7 @@ public class CustomRoundView extends View {
 
 //        paint.setColor(getResources().getColor(R.color.color3));
         paint.setAntiAlias(true);
-        LogUtils.i(TAG, "processRoundBitmap: x=" + x + ",y=" + y + ",radius=" + radius);
+        LogTools.i(TAG, "processRoundBitmap: x=" + x + ",y=" + y + ",radius=" + radius);
         canvas.drawOval(new RectF(x, y, x + 2 * radius, y + 2 * radius), paint);
         paint.setAntiAlias(false);
         paint.setXfermode(mXfermodeSrcIn);
@@ -130,7 +129,7 @@ public class CustomRoundView extends View {
         Paint paint = new Paint();
         paint.setAntiAlias(true);
         paint.setShader(new BitmapShader(source, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
-        LogUtils.i(TAG, "test: 11111111111");
+        LogTools.i(TAG, "test: 11111111111");
         Path path = new Path();
         path.addCircle(rectF.right / 2, rectF.bottom - rectF.height() / 2, 100, Path.Direction.CCW);
         canvas.clipPath(path);

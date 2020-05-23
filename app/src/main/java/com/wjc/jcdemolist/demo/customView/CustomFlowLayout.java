@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +42,7 @@ public class CustomFlowLayout extends ViewGroup {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        LogUtils.i(TAG, "onInterceptTouchEvent: ev="+ev.getAction());
+        LogTools.i(TAG, "onInterceptTouchEvent: ev="+ev.getAction());
         float xInterceptX = ev.getX();
         float yInterceptY = ev.getY();
         boolean intercepted = false;
@@ -66,7 +66,7 @@ public class CustomFlowLayout extends ViewGroup {
                 break;
         }
 //        result = super.onInterceptTouchEvent(ev);
-//        LogUtils.i(TAG, "onInterceptTouchEvent: y=" + y + ",lastY=" + LastY + ",ev.getAction()=" + ev.getAction());
+//        LogTools.i(TAG, "onInterceptTouchEvent: y=" + y + ",lastY=" + LastY + ",ev.getAction()=" + ev.getAction());
         mLastInterceptX = xInterceptX;
         mLastInterceptY = yInterceptY;
 
@@ -75,7 +75,7 @@ public class CustomFlowLayout extends ViewGroup {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        LogUtils.i(TAG, "onTouchEvent: event=" + event.getAction());
+        LogTools.i(TAG, "onTouchEvent: event=" + event.getAction());
         if (!shouldScroll) {
             return super.onTouchEvent(event);
         }
@@ -121,7 +121,7 @@ public class CustomFlowLayout extends ViewGroup {
         int lineWidth = 0, lineHeight = 0;  // 一行的高度、宽度
 
         //2. 测量子View 获取到当前子View的测量的宽度/高度，并计算 ViewGroup 宽高
-        LogUtils.i(TAG, "onMeasure: " + getChildCount());
+        LogTools.i(TAG, "onMeasure: " + getChildCount());
         for (int i = 0; i < getChildCount(); i++) {
             View child = getChildAt(i);
             measureChild(child, widthMeasureSpec, heightMeasureSpec);

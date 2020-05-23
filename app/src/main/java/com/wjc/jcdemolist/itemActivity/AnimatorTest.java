@@ -9,7 +9,7 @@ import android.view.animation.Interpolator;
 import android.widget.TextView;
 
 import com.wjc.jcdemolist.R;
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 
 public class AnimatorTest extends AppCompatActivity {
     private static final String TAG = "AnimatorTest";
@@ -45,7 +45,7 @@ public class AnimatorTest extends AppCompatActivity {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 char text = (char) animation.getAnimatedValue();
-                LogUtils.i(TAG, "onAnimationUpdate: text=" + text + ",animation.getAnimatedValue()=" + animation.getAnimatedValue());
+                LogTools.i(TAG, "onAnimationUpdate: text=" + text + ",animation.getAnimatedValue()=" + animation.getAnimatedValue());
                 target02.setText(String.valueOf(text));
             }
         });
@@ -69,7 +69,7 @@ public class AnimatorTest extends AppCompatActivity {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {// 监听值的回调
                 int value = (int) animation.getAnimatedValue();
-                LogUtils.i(TAG, "onAnimationUpdate: animation=" + value);
+                LogTools.i(TAG, "onAnimationUpdate: animation=" + value);
                 target.layout(target.getLeft(), value, target.getRight(), value + target.getHeight());
             }
         });

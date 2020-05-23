@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.wjc.jcdemolist.R;
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 
 public class Custom2Activity extends AppCompatActivity {
     private static final String TAG = "Custom2Activity";
@@ -37,7 +37,7 @@ public class Custom2Activity extends AppCompatActivity {
                 break;
         }
         boolean result = super.dispatchTouchEvent(ev);
-        LogUtils.i(TAG, "dispatchTouchEvent: result=" + result + ",ev=" + ev.getAction());
+        LogTools.i(TAG, "dispatchTouchEvent: result=" + result + ",ev=" + ev.getAction());
         return result;
     }
 }

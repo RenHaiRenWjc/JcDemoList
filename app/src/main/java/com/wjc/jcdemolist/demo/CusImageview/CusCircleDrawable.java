@@ -36,7 +36,7 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import android.widget.ImageView.ScaleType;
 
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -136,7 +136,7 @@ public class CusCircleDrawable extends Drawable {
             drawable.draw(canvas);
         } catch (Exception e) {
             e.printStackTrace();
-            LogUtils.w(TAG, "Failed to create bitmap from drawable!");
+            LogTools.w(TAG, "Failed to create bitmap from drawable!");
             bitmap = null;
         }
 

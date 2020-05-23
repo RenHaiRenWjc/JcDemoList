@@ -1,7 +1,5 @@
 package com.wjc.jcdemolist.demo.Dagger2Test.test01;
 
-import com.wjc.jcdemolist.Utils.LogUtils;
-
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
