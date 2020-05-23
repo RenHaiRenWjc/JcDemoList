@@ -1,5 +1,7 @@
 package com.wjc.jcdemolist.Utils.Reflect;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +10,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 
-import com.wjc.jcdemolist.Utils.LogUtils;
+import com.wjc.jcdemolist.Utils.LogTools;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
@@ -16,6 +18,8 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.Arrays;
+
+import butterknife.OnClick;
 
 /**
  * ClassName: com.wjc.jcdemolist.demo.changeSkin
@@ -25,11 +29,70 @@ import java.util.Arrays;
 public class InjectUtils {
   private static final String TAG = "InjectUtils";
 
+
+  public static void injectView(Activity activity) {
+    Class<? extends Activity> mClass = activity.getClass();
+    Field[] fields = mClass.getDeclaredFields();
+    for (Field field : fields) {
+      InjectView injectView = field.getAnnotation(InjectView.class);
+      if (injectView != null) {
+        int valueId = injectView.value();
+        try {
+          Method method = mClass.getMethod("findViewById", int.class);//参数：方法名、参数类型
+          Object view = method.invoke(activity, valueId);// activity 为对象，对象的方法
+          field.setAccessible(true);
+          field.set(activity, view);
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+      }
+    }
+  }
+
+  public static void injectEvent02(Activity activity) {
+    Class<?> mClass = activity.getClass();
+    Method[] methods = mClass.getDeclaredMethods();
+    for (Method method : methods) {
+      Annotation[] annotations = method.getDeclaredAnnotations();
+      for (Annotation annotation : annotations) {
+        Class<? extends Annotation> annotationTyep = annotation.annotationType();// 有没有 EventBase 注解
+        if (annotationTyep.isAnnotationPresent(EventBase.class)) {
+          EventBase eventBase = annotationTyep.getAnnotation(EventBase.class);
+          // EventBase 里面的值
+          String setListener = eventBase.setListener();
+          Class<?> listener = eventBase.listenerType();
+           String methodCallBack = eventBase.methodCallback();
+
+          Object proxy = Proxy.newProxyInstance(listener.getClassLoader(), new Class[]{listener}, new InvocationHandler() {
+            @Override
+            public Object invoke(Object proxy, Method method1, Object[] args) throws Throwable {
+              return method.invoke(activity, args); // 动态执行 Activity 中的 onClick 方法
+            }
+          });
+
+          onClick02 onClick02 = method.getAnnotation(onClick02.class);
+          int[] ids = onClick02.id();
+          for (int id : ids) {
+            try {
+              View targetView = activity.findViewById(id);
+//              Method callback = listener.getMethod(methodCallBack, View.class);// onClick(View view) 方法
+
+              Method methodSetlistener = targetView.getClass().getMethod(setListener, listener);// setOnClickListener(new OnClickListener{ void onClick () })
+              methodSetlistener.invoke(targetView, proxy);
+            } catch (Exception e) {
+              e.printStackTrace();
+            }
+          }
+        }
+      }
+    }
+  }
+
   public static void injectEvent(Activity activity) {
     Class<? extends Activity> activityClass = activity.getClass();
     Method[] methods = activityClass.getDeclaredMethods();//拿到这个类所有方法
     for (Method method : methods) {
-      LogUtils.i(TAG, "injectEvent:method -- " + method.getName());
+      LogTools.i(TAG, "injectEvent:method -- " + method.getName());
       Annotation[] annotations = method.getAnnotations();//拿到方法上的所有注解
       for (Annotation annotation : annotations) {
         Class<? extends Annotation> annotationType = annotation.annotationType(); // 注解的注解
@@ -47,7 +110,7 @@ public class InjectUtils {
             Object listenerProxy = Proxy.newProxyInstance(listenerType.getClassLoader(),
               new Class[]{listenerType},  //动态代理生成 View.OnClickListener 这个类
               (proxy, method1, args) -> {//  proxy:View.OnClickListener  method1:onClick 相当于监听有没有调用该方法，如果有，则反射调用该方法
-              return method.invoke(activity, args);
+                return method.invoke(activity, args);
               });
             for (int viewId : viewIds) {
               View view = activity.findViewById(viewId);
@@ -109,7 +172,7 @@ public class InjectUtils {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-      //LogUtils.i(TAG, "invoke:proxy= " + proxy + "，method==" + method);
+      //LogTools.i(TAG, "invoke:proxy= " + proxy + "，method==" + method);
       Log.i(TAG, "invoke: method=" + method + ",target=" + target);
       return this.method.invoke(target, args);
     }
