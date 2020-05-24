@@ -1,1 +1,1 @@
-include ':app', ':JavaDemo', ':mvpdraggerdemo02', ':asj-annotations', ':asj-runtime'
+include ':app', ':JavaDemo', ':mvpdraggerdemo02', ':annotations', ':annotation_compiler'

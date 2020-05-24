@@ -10,6 +10,8 @@
       <module fileurl="file://$PROJECT_DIR$/asj-annotations/JcDemoList02-asj-annotations.iml" filepath="$PROJECT_DIR$/asj-annotations/JcDemoList02-asj-annotations.iml" />
       <module fileurl="file://$PROJECT_DIR$/asj-runtime/JcDemoList02-asj-runtime.iml" filepath="$PROJECT_DIR$/asj-runtime/JcDemoList02-asj-runtime.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvpdraggerdemo02/JcDemoList02-mvpdraggerdemo02.iml" filepath="$PROJECT_DIR$/mvpdraggerdemo02/JcDemoList02-mvpdraggerdemo02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/annotation_compiler/annotation_compiler.iml" filepath="$PROJECT_DIR$/annotation_compiler/annotation_compiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/annotations/annotations.iml" filepath="$PROJECT_DIR$/annotations/annotations.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/asj-annotations/asj-annotations.iml" filepath="$PROJECT_DIR$/asj-annotations/asj-annotations.iml" />
       <module fileurl="file://$PROJECT_DIR$/asj-runtime/asj-runtime.iml" filepath="$PROJECT_DIR$/asj-runtime/asj-runtime.iml" />
@@ -17,8 +19,6 @@
       <module fileurl="file://$PROJECT_DIR$/project-JcDemoList02.iml" filepath="$PROJECT_DIR$/project-JcDemoList02.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaDemo/project-JcDemoList02-JavaDemo.iml" filepath="$PROJECT_DIR$/JavaDemo/project-JcDemoList02-JavaDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/project-JcDemoList02-app.iml" filepath="$PROJECT_DIR$/app/project-JcDemoList02-app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/asj-annotations/project-JcDemoList02-asj-annotations.iml" filepath="$PROJECT_DIR$/asj-annotations/project-JcDemoList02-asj-annotations.iml" />
-      <module fileurl="file://$PROJECT_DIR$/asj-runtime/project-JcDemoList02-asj-runtime.iml" filepath="$PROJECT_DIR$/asj-runtime/project-JcDemoList02-asj-runtime.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvpdraggerdemo02/project-JcDemoList02-mvpdraggerdemo02.iml" filepath="$PROJECT_DIR$/mvpdraggerdemo02/project-JcDemoList02-mvpdraggerdemo02.iml" />
     </modules>
   </component>

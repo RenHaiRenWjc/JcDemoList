@@ -9,9 +9,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/JavaDemo" />
+            <option value="$PROJECT_DIR$/annotation_compiler" />
+            <option value="$PROJECT_DIR$/annotations" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/asj-annotations" />
-            <option value="$PROJECT_DIR$/asj-runtime" />
             <option value="$PROJECT_DIR$/mvpdraggerdemo02" />
           </set>
         </option>
