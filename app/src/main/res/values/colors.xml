@@ -7,8 +7,17 @@
     <color name="color2">#221D1E</color>
     <color name="color3">#5F8F2F</color>
     <color name="color4">#5E1B6286</color>
-    <color name="color5">#80160C</color>
+    <color name="color5">#800C1B</color>
     <color name="color6">#D5CA51</color>
     <color name="color7">#80D5CA51</color>
     <color name="color5_day">@color/colorPrimary</color>
+
+    <color name="black">#000000</color>
+    <color name="black_10">#1A000000</color>
+
+    <color name="transparent">#00ffffff</color>
+    <color name="white">#ffffff</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="white_10">#1AFFFFFF</color>
+
 </resources>
