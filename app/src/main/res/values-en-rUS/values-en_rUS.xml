@@ -3,4 +3,6 @@
     <string name="app_name">JcDemoList</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="marquee_activity">marquee_activity</string>
+    <string name="google_android_client_id">812599805215-lq46mhfc8ij3t6djqo0q74i0tpb14i91.apps.googleusercontent.com</string>
+
 </resources>

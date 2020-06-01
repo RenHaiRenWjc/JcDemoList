@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="20dp"
     tools:context=".demo.mvp.mvpDemo01.ui.login.LoginActivity">
 
     <EditText
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="账号"
+        android:hint="邮箱账号"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,10 +26,19 @@
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <Button
-        android:id="@+id/bt_ok_test01"
+        android:id="@+id/bt_ok_email"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="登录"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:text="邮箱登录"
         app:layout_constraintTop_toBottomOf="@+id/pwd" />
+
+    <Button
+        android:id="@+id/bt_ok_google"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:text="google登录"
+        app:layout_constraintTop_toBottomOf="@+id/bt_ok_email" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

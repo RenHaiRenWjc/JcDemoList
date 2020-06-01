@@ -2,4 +2,5 @@
     <string name="app_name">JcDemo</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="marquee_activity">跑马灯、蜘蛛网格图</string>
+    <string name="google_android_client_id">812599805215-lq46mhfc8ij3t6djqo0q74i0tpb14i91.apps.googleusercontent.com</string>
 </resources>
