@@ -1,6 +1,7 @@
 package com.wjc.jcdemolist;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.facebook.stetho.Stetho;
 import com.wjc.jcdemolist.Utils.SharedPreferencesUtil;
@@ -16,10 +17,12 @@ import com.wjc.jcdemolist.demo.mvp.mvpDagger2Demo01.di.DaggerAppComponent;
  */
 public class JcApplication extends Application {
     private AppComponent appComponent;
+    private static Context context;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        context = getApplicationContext();
         //使用Chrome来调试Android Application的工具
         Stetho.initialize(Stetho.newInitializerBuilder(this)
                 .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
@@ -34,5 +37,9 @@ public class JcApplication extends Application {
 
     public AppComponent getAppComponent() {
         return appComponent;
+    }
+
+    public static Context getContext() {
+        return context;
     }
 }

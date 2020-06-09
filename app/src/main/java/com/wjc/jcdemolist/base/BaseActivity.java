@@ -58,6 +58,12 @@ public abstract class  BaseActivity extends AppCompatActivity {
                     context.startActivity(new Intent(context, mDates.get(position).getIntentClass()));
                 }
             });
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    
+                }
+            });
         }
     }
 }
