@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/IT-project-JcDemoList02.iml" filepath="$PROJECT_DIR$/IT-project-JcDemoList02.iml" group="JcDemoList02" />
       <module fileurl="file://$PROJECT_DIR$/JavaDemo/JavaDemo.iml" filepath="$PROJECT_DIR$/JavaDemo/JavaDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/JcDemoList02.iml" filepath="$PROJECT_DIR$/.idea/JcDemoList02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/JcDemoList02.iml" filepath="$PROJECT_DIR$/.idea/JcDemoList02.iml" group="JcDemoList02" />
       <module fileurl="file://$PROJECT_DIR$/JavaDemo/JcDemoList02-JavaDemo.iml" filepath="$PROJECT_DIR$/JavaDemo/JcDemoList02-JavaDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/JcDemoList02-app.iml" filepath="$PROJECT_DIR$/app/JcDemoList02-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/asj-annotations/JcDemoList02-asj-annotations.iml" filepath="$PROJECT_DIR$/asj-annotations/JcDemoList02-asj-annotations.iml" />

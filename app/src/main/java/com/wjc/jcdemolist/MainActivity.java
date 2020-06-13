@@ -12,6 +12,7 @@ import com.wjc.jcdemolist.demo.WebViewTest.WebViewActivity;
 import com.wjc.jcdemolist.demo.changeSkin.ChangeSkinActivity;
 import com.wjc.jcdemolist.demo.ServiceDemo.ServiceDemoActivity;
 import com.wjc.jcdemolist.demo.customRv.CustomRvActivity;
+import com.wjc.jcdemolist.demo.jetpack.JcLoginActivity;
 import com.wjc.jcdemolist.itemActivity.XfermodeActivity;
 import com.wjc.jcdemolist.demo.dispatch.dispatchDemo.Main5Activity;
 import com.wjc.jcdemolist.demo.dispatch.dispatchDemo02.Main6Activity;
@@ -67,6 +68,7 @@ public class MainActivity extends BaseActivity {
 		list.add(new ActivityTypeBean("数据库", KotlinActivity.class));
 		list.add(new ActivityTypeBean("WebView测试", WebViewActivity.class));
 		list.add(new ActivityTypeBean("自定义Retrofit、日历", Main8Activity.class));
+		list.add(new ActivityTypeBean("Jetpack测试", JcLoginActivity.class));
 
 		return list;
 	}
