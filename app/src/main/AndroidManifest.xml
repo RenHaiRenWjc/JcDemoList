@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".demo.jetpack.JcLoginActivity"></activity>
+        <activity android:name=".demo.jetpack.HomeActivity"></activity>
+        <activity android:name=".demo.jetpack.JcLoginActivity" />
         <activity android:name=".demo.JcRetrofit.Main8Activity" />
         <activity android:name=".demo.changeSkin.SecondActivity" />
         <activity android:name=".demo.WebViewTest.WebViewActivity" />

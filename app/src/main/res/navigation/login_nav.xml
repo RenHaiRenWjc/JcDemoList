@@ -3,25 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login_nav"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/welcomeFragment">
 
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.wjc.jcdemolist.demo.jetpack.ui.login.WelcomeFragment"
         android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome" />
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.wjc.jcdemolist.demo.jetpack.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main">
+        tools:layout="@layout/fragment_welcome" >
         <action
-            android:id="@+id/action_mainFragment_to_searchFragment2"
-            app:destination="@id/userInofFragment" />
+            android:id="@+id/action_welcomeFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_jcLoginFragment"
+            android:id="@+id/action_welcomeFragment_to_jcLoginFragment"
             app:destination="@id/jcLoginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.wjc.jcdemolist.demo.jetpack.HomeFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_home"/>
     <fragment
         android:id="@+id/userInofFragment"
         android:name="com.wjc.jcdemolist.demo.jetpack.ui.login.UserInfoFragment"
@@ -31,11 +31,7 @@
         android:id="@+id/jcLoginFragment"
         android:name="com.wjc.jcdemolist.demo.jetpack.ui.login.JcLoginFragment"
         android:label="fragment_jclogin"
-        tools:layout="@layout/fragment_jclogin">
-        <action
-            android:id="@+id/action_jcLoginFragment_to_registerFragment3"
-            app:destination="@id/registerFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_jclogin"/>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.wjc.jcdemolist.demo.jetpack.ui.login.RegisterFragment"

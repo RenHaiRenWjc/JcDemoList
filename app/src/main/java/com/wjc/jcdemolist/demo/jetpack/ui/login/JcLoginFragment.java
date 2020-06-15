@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wjc.jcdemolist.R;
+import com.wjc.jcdemolist.demo.jetpack.HomeActivity;
 
 public class JcLoginFragment extends Fragment {
 
@@ -115,6 +117,8 @@ public class JcLoginFragment extends Fragment {
 				loadingProgressBar.setVisibility(View.VISIBLE);
 				loginViewModel.login(usernameEditText.getText().toString(),
 					passwordEditText.getText().toString());
+				Intent intent = new Intent(getContext(), HomeActivity.class);
+				startActivity(intent);
 			}
 		});
 	}

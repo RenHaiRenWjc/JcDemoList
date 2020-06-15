@@ -76,13 +76,13 @@ public class WelcomeFragment extends Fragment {
 		switch (view.getId()) {
 			case R.id.bt_register:
 				LogTools.i(TAG, ":bt_register ");
-//				NavHostFragment.findNavController(this)
-//					.navigate(R.id.action_welcomeFragment_to_registerFragment);
+				NavHostFragment.findNavController(this)
+					.navigate(R.id.action_welcomeFragment_to_registerFragment);
 				break;
 			case R.id.bt_login:
 				LogTools.i(TAG, ": bt_login");
-//				NavHostFragment.findNavController(this)
-//					.navigate(R.id.action_welcomeFragment_to_jcLoginFragment);
+				NavHostFragment.findNavController(this)
+					.navigate(R.id.action_welcomeFragment_to_jcLoginFragment);
 				break;
 		}
 	}
