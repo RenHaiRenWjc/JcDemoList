@@ -1,4 +1,4 @@
-package com.wjc.jcdemolist.demo.jetpack.ui.login;
+package com.wjc.jcdemolist.jetpack.ui.login;
 
 import android.os.Bundle;
 

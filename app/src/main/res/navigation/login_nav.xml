@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.wjc.jcdemolist.demo.jetpack.ui.login.WelcomeFragment"
+        android:name="com.wjc.jcdemolist.jetpack.ui.login.WelcomeFragment"
         android:label="fragment_welcome"
         tools:layout="@layout/fragment_welcome" >
         <action
@@ -19,22 +19,22 @@
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.wjc.jcdemolist.demo.jetpack.HomeFragment"
+        android:name="com.wjc.jcdemolist.jetpack.HomeFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_home"/>
     <fragment
         android:id="@+id/userInofFragment"
-        android:name="com.wjc.jcdemolist.demo.jetpack.ui.login.UserInfoFragment"
+        android:name="com.wjc.jcdemolist.jetpack.ui.login.UserInfoFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_user_info" />
     <fragment
         android:id="@+id/jcLoginFragment"
-        android:name="com.wjc.jcdemolist.demo.jetpack.ui.login.JcLoginFragment"
+        android:name="com.wjc.jcdemolist.jetpack.ui.login.JcLoginFragment"
         android:label="fragment_jclogin"
         tools:layout="@layout/fragment_jclogin"/>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.wjc.jcdemolist.demo.jetpack.ui.login.RegisterFragment"
+        android:name="com.wjc.jcdemolist.jetpack.ui.login.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register"/>
 </navigation>

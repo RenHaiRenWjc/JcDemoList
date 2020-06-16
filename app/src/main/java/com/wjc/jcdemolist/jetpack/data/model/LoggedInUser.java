@@ -1,4 +1,4 @@
-package com.wjc.jcdemolist.demo.jetpack.data.model;
+package com.wjc.jcdemolist.jetpack.data.model;
 
 /**
  * Data class that captures user information for logged in users retrieved from LoginRepository

@@ -1,4 +1,4 @@
-package com.wjc.jcdemolist.demo.jetpack.ui.login;
+package com.wjc.jcdemolist.jetpack.ui.login;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -23,7 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wjc.jcdemolist.R;
-import com.wjc.jcdemolist.demo.jetpack.HomeActivity;
+import com.wjc.jcdemolist.jetpack.HomeActivity;
 
 public class JcLoginFragment extends Fragment {
 

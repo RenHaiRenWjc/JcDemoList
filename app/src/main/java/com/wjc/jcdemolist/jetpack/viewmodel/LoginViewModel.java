@@ -1,4 +1,4 @@
-package com.wjc.jcdemolist.demo.jetpack.ui.login;
+package com.wjc.jcdemolist.jetpack.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -7,9 +7,12 @@ import androidx.lifecycle.ViewModel;
 import android.util.Patterns;
 
 import com.wjc.jcdemolist.R;
-import com.wjc.jcdemolist.demo.jetpack.data.LoginRepository;
-import com.wjc.jcdemolist.demo.jetpack.data.Result;
-import com.wjc.jcdemolist.demo.jetpack.data.model.LoggedInUser;
+import com.wjc.jcdemolist.jetpack.data.LoginRepository;
+import com.wjc.jcdemolist.jetpack.data.Result;
+import com.wjc.jcdemolist.jetpack.data.model.LoggedInUser;
+import com.wjc.jcdemolist.jetpack.ui.login.LoggedInUserView;
+import com.wjc.jcdemolist.jetpack.ui.login.LoginFormState;
+import com.wjc.jcdemolist.jetpack.ui.login.LoginResult;
 
 public class LoginViewModel extends ViewModel {
 

@@ -1,6 +1,6 @@
-package com.wjc.jcdemolist.demo.jetpack.data;
+package com.wjc.jcdemolist.jetpack.data;
 
-import com.wjc.jcdemolist.demo.jetpack.data.model.LoggedInUser;
+import com.wjc.jcdemolist.jetpack.data.model.LoggedInUser;
 
 import java.io.IOException;
 

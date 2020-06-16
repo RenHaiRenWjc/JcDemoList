@@ -1,4 +1,4 @@
-package com.wjc.jcdemolist.demo.jetpack.data;
+package com.wjc.jcdemolist.jetpack.data;
 
 /**
  * A generic class that holds a result success w/ data or an error exception.

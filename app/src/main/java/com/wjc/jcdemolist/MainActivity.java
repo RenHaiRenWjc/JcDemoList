@@ -1,9 +1,7 @@
 package com.wjc.jcdemolist;
 
 import android.os.Bundle;
-import android.widget.ImageView;
 
-import com.wjc.jcdemolist.Utils.QrcodeUtils;
 import com.wjc.jcdemolist.base.BaseActivity;
 import com.wjc.jcdemolist.bean.ActivityTypeBean;
 import com.wjc.jcdemolist.demo.JcRetrofit.Main8Activity;
@@ -12,7 +10,7 @@ import com.wjc.jcdemolist.demo.WebViewTest.WebViewActivity;
 import com.wjc.jcdemolist.demo.changeSkin.ChangeSkinActivity;
 import com.wjc.jcdemolist.demo.ServiceDemo.ServiceDemoActivity;
 import com.wjc.jcdemolist.demo.customRv.CustomRvActivity;
-import com.wjc.jcdemolist.demo.jetpack.JcLoginActivity;
+import com.wjc.jcdemolist.jetpack.JcLoginActivity;
 import com.wjc.jcdemolist.itemActivity.XfermodeActivity;
 import com.wjc.jcdemolist.demo.dispatch.dispatchDemo.Main5Activity;
 import com.wjc.jcdemolist.demo.dispatch.dispatchDemo02.Main6Activity;

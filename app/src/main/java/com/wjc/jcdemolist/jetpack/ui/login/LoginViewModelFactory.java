@@ -1,11 +1,11 @@
-package com.wjc.jcdemolist.demo.jetpack.ui.login;
+package com.wjc.jcdemolist.jetpack.ui.login;
 
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.annotation.NonNull;
 
-import com.wjc.jcdemolist.demo.jetpack.data.LoginDataSource;
-import com.wjc.jcdemolist.demo.jetpack.data.LoginRepository;
+import com.wjc.jcdemolist.jetpack.data.LoginDataSource;
+import com.wjc.jcdemolist.jetpack.data.LoginRepository;
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.

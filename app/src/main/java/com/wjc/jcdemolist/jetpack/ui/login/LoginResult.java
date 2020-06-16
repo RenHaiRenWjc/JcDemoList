@@ -1,11 +1,11 @@
-package com.wjc.jcdemolist.demo.jetpack.ui.login;
+package com.wjc.jcdemolist.jetpack.ui.login;
 
 import androidx.annotation.Nullable;
 
 /**
  * Authentication result : success (user details) or error message.
  */
-class LoginResult {
+public class LoginResult {
 	@Nullable
 	private LoggedInUserView success;
 	@Nullable
@@ -15,8 +15,11 @@ class LoginResult {
 		this.error = error;
 	}
 
-	LoginResult(@Nullable LoggedInUserView success) {
+	public LoginResult(@Nullable LoggedInUserView success) {
 		this.success = success;
+	}
+
+	public LoginResult(int login_failed) {
 	}
 
 	@Nullable

@@ -1,4 +1,4 @@
-package com.wjc.jcdemolist.demo.jetpack;
+package com.wjc.jcdemolist.jetpack;
 
 import androidx.appcompat.app.AppCompatActivity;
 
