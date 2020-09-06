@@ -24,7 +24,6 @@
         <activity android:name=".demo.changeSkin.ChangeSkinActivity" />
         <activity android:name=".demo.PaintAndCanvas.PaintAndCanvasActivity" />
         <activity android:name=".itemActivity.AnimatorTest" />
-        <activity android:name=".demo.dispatch.dispatchDemo03.Main7Activity" />
         <activity android:name=".demo.dispatch.dispatchDemo02.Main6Activity" />
         <activity android:name=".demo.dispatch.dispatchDemo.Main5Activity" />
         <activity android:name=".itemActivity.Custom2Activity" />

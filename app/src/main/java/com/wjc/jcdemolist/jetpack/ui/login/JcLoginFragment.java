@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.wjc.jcdemolist.R;
 import com.wjc.jcdemolist.jetpack.HomeActivity;
+import com.wjc.jcdemolist.jetpack.viewmodel.LoginViewModel;
 
 public class JcLoginFragment extends Fragment {
 

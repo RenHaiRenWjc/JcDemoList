@@ -20,15 +20,15 @@ public class LoginViewModel extends ViewModel {
 	private MutableLiveData<LoginResult> loginResult = new MutableLiveData<>();
 	private LoginRepository loginRepository;
 
-	LoginViewModel(LoginRepository loginRepository) {
+	public LoginViewModel(LoginRepository loginRepository) {
 		this.loginRepository = loginRepository;
 	}
 
-	LiveData<LoginFormState> getLoginFormState() {
+	public LiveData<LoginFormState> getLoginFormState() {
 		return loginFormState;
 	}
 
-	LiveData<LoginResult> getLoginResult() {
+	public LiveData<LoginResult> getLoginResult() {
 		return loginResult;
 	}
 

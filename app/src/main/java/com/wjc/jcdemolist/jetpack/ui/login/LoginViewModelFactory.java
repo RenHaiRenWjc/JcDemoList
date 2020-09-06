@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 
 import com.wjc.jcdemolist.jetpack.data.LoginDataSource;
 import com.wjc.jcdemolist.jetpack.data.LoginRepository;
+import com.wjc.jcdemolist.jetpack.viewmodel.LoginViewModel;
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.
